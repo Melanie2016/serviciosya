@@ -13,6 +13,8 @@ public interface IOccupationDao {
     List<Occupation> findAllOccupations ();
 
     void add (Occupation occupation);
-    
-    Occupation searchById(String id);
+
+	public Occupation searchById(String id);
+	
+
 }

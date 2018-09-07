@@ -4,9 +4,10 @@ package com.cagmeini.serviciosya.dao;
 
 import java.util.*;
 
+import com.cagmeini.serviciosya.beans.domain.Occupation;
+
 import static org.apache.commons.lang3.RandomStringUtils.*;
 
-import com.cagmeini.serviciosya.beans.domain.Occupation;
 
 
 public class OccupationDaoMemory implements IOccupationDao {
@@ -57,4 +58,29 @@ public class OccupationDaoMemory implements IOccupationDao {
 
         this.occupations.put (occupation.getId (), occupation);
     }
+
+	@Override
+	public Occupation searchById(String id) {
+		
+		Occupation occupationFound = new Occupation() ;
+		
+		List<Occupation> lista = findAllOccupations();
+		
+		for (Occupation o : lista ) {
+			if(o.getId().equals(id))
+			{
+				occupationFound.setId(o.getId());
+				occupationFound.setId(o.getName());
+				occupationFound.setId(o.getDescription());
+			}
+		}
+		
+		return occupationFound;
+	}
+    
+  
+	
+	
+	
+	
 }

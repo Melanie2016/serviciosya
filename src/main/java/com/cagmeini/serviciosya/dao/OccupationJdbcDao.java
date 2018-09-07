@@ -15,4 +15,14 @@ public class OccupationJdbcDao implements IOccupationDao {
   public void add(Occupation occupation) {
 
   }
+
+  @Override
+  public Occupation searchById(String id) {
+		// TODO Auto-generated method stub
+	  return null;
+  }
+
+  
+  
+  
 }

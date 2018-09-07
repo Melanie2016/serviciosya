@@ -31,13 +31,27 @@ public class OccupationService {
         this.occupationDao = occupationDao;
     }
 
+   
+    
+    
     public List<Occupation> findAllOccupations () {
 
         return this.occupationDao.findAllOccupations ();
     }
 
+    
+    
     public void addOccupation (Occupation occupation) {
 
         this.occupationDao.add (occupation);
     }
+    
+    
+    
+    public Occupation searchByIdService(String id) {
+    	return this.occupationDao.searchById(id);
+    }
+    
+    
+    
 }
