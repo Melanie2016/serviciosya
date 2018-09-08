@@ -85,6 +85,28 @@ public class OccupationServiceTest {
     }
     
     
+    @Test
+    public void testDeleteById() {
+    	this.occupationService.setOccupationDao(this.occupationDao);
+
+    		
+    	Occupation o1 = new Occupation ("1", "Chef", "Cocinar");
+    	Occupation o2 = new Occupation ("2", "Cantante", "Cantar");
+ 
+    	this.occupationService.addOccupation(o1);
+    	this.occupationService.addOccupation(o2);
+    	
+    	this.occupationService.delete("1");
+    	
+    	List<Occupation> list = this.occupationDao.findAllOccupations ();
+    	
+    
+    	
+    	Assert.assertEquals(3, list.size());
+    	
+    	
+    }
+    
     
     
 }
