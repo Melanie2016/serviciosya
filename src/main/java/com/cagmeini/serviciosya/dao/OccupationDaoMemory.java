@@ -36,6 +36,7 @@ public class OccupationDaoMemory implements IOccupationDao {
         this.occupations.put (o2.getId (), o2);
     }
 
+    
     @Override
     public List<Occupation> findAllOccupations () {
 
@@ -53,12 +54,38 @@ public class OccupationDaoMemory implements IOccupationDao {
         return list;
     }
 
+    
     @Override
     public void add (Occupation occupation) {
 
         this.occupations.put (occupation.getId (), occupation);
     }
 
+	  
+	@Override
+	public void update(String id, String name, String description) {
+		
+		List<Occupation> lista = findAllOccupations();
+
+		for (Occupation o : lista ) {
+			if(o.getId().equals(id))
+			{
+				o.setName(name);
+				o.setDescription(description);
+				this.occupations.replace(o.getId(), o);
+			}
+		}
+	}
+	
+	
+	@Override
+	public void delete(String id) {
+		
+		
+		
+	}
+	
+	
 	@Override
 	public Occupation searchById(String id) {
 		
@@ -77,23 +104,5 @@ public class OccupationDaoMemory implements IOccupationDao {
 		
 		return occupationFound;
 	}
-    
-  
-	@Override
-	public void update(String id, String name, String description) {
-		
-		List<Occupation> lista = findAllOccupations();
-
-		for (Occupation o : lista ) {
-			if(o.getId().equals(id))
-			{
-				o.setName(name);
-				o.setDescription(description);
-				this.occupations.replace(o.getId(), o);
-			}
-		}
-	}
-	
-	
 	
 }

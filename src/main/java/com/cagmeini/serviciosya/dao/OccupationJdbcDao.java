@@ -17,15 +17,20 @@ public class OccupationJdbcDao implements IOccupationDao {
 	  }
 
 	  @Override
+	  public void update(String id,String name, String description) {
+			
+	  }
+  
+	  @Override
+	  public void delete(String id) {
+		  
+	  }
+	  
+	  @Override
 	  public Occupation searchById(String id) {
 			// TODO Auto-generated method stub
 		  return null;
 	  }
 
-	  @Override
-	  public void update(String id,String name, String description) {
-			
-	  }
-  
-  
+	  
 }

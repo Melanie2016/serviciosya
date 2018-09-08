@@ -16,6 +16,8 @@ public interface IOccupationDao {
 
     void update(String id,String name, String description);
 	
+    void delete(String id);
+    
     Occupation searchById(String id);
 	
 	
