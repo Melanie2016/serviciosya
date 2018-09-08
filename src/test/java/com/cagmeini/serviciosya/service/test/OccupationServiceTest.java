@@ -65,4 +65,14 @@ public class OccupationServiceTest {
 //    	Assert.assertEquals(o1.getDescription(),o2.getDescription());
     	Assert.assertTrue(o1.getDescription().equals(o2.getDescription()));
     }
+    
+    
+    @Test
+    public void testUpdateById() {
+    	this.occupationService.setOccupationDao(this.occupationDao);
+    }
+    
+    
+    
+    
 }

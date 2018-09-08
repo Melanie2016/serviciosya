@@ -53,5 +53,9 @@ public class OccupationService {
     }
     
     
+    public void update(String id,String name, String description) {
+    	this.occupationDao.update(id, name, description);
+    }
+    
     
 }

@@ -79,7 +79,20 @@ public class OccupationDaoMemory implements IOccupationDao {
 	}
     
   
-	
+	@Override
+	public void update(String id, String name, String description) {
+		
+		List<Occupation> lista = findAllOccupations();
+
+		for (Occupation o : lista ) {
+			if(o.getId().equals(id))
+			{
+				o.setName(name);
+				o.setDescription(description);
+				this.occupations.replace(o.getId(), o);
+			}
+		}
+	}
 	
 	
 	
