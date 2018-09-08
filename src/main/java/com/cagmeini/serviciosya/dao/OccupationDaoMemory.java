@@ -81,6 +81,14 @@ public class OccupationDaoMemory implements IOccupationDao {
 	@Override
 	public void delete(String id) {
 		
+		List<Occupation> lista = findAllOccupations();
+
+		for (Occupation o : lista ) {
+			if(o.getId().equals(id))
+			{
+				this.occupations.remove(o.getId(), o);
+			}
+		}
 		
 		
 	}
