@@ -16,5 +16,5 @@ public interface IOccupationDao {
 
 	public Occupation searchById(String id);
 	
-
+	
 }

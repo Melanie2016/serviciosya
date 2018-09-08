@@ -2,6 +2,8 @@
 package com.cagmeini.serviciosya.service.test;
 
 
+
+
 import java.util.List;
 
 import com.cagmeini.serviciosya.dao.IOccupationDao;
@@ -47,5 +49,20 @@ public class OccupationServiceTest {
         List<Occupation> end = this.occupationDao.findAllOccupations ();
 
         Assert.assertTrue (init.size()+1 == end.size());
+    }
+    
+    @Test
+    public void testSearchById() {
+    	this.occupationService.setOccupationDao(this.occupationDao);
+    	
+    	// agrego una ocupacion para testear con un id que conozco
+    	Occupation o1 = new Occupation ("1", "Catador de Ron", "Beber alcohol...");
+    	this.occupationService.addOccupation(o1);
+    	
+
+    	Occupation o2 = this.occupationDao.searchById("1");
+    	
+//    	Assert.assertEquals(o1.getDescription(),o2.getDescription());
+    	Assert.assertTrue(o1.getDescription().equals(o2.getDescription()));
     }
 }

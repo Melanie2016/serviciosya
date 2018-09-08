@@ -70,8 +70,8 @@ public class OccupationDaoMemory implements IOccupationDao {
 			if(o.getId().equals(id))
 			{
 				occupationFound.setId(o.getId());
-				occupationFound.setId(o.getName());
-				occupationFound.setId(o.getDescription());
+				occupationFound.setName(o.getName());
+				occupationFound.setDescription(o.getDescription());
 			}
 		}
 		
