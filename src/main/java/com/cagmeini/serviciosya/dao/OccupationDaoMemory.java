@@ -57,7 +57,7 @@ public class OccupationDaoMemory implements IOccupationDao {
     
     @Override
     public void add (Occupation occupation) {
-
+    	
         this.occupations.put (occupation.getId (), occupation);
     }
 
