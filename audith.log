@@ -1,0 +1,2 @@
+2018-09-12 10:06:26 INFO  OccupationServiceTest:28 - Starting occupation add test.
+2018-09-12 10:06:28 ERROR OccupationDaoJDBC:98 - Failure inserting new occupation!
