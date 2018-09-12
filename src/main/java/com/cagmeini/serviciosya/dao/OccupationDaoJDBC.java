@@ -5,6 +5,7 @@ import com.cagmeini.serviciosya.beans.domain.Occupation;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import org.apache.log4j.Logger;
 
@@ -46,9 +47,9 @@ public class OccupationDaoJDBC implements IOccupationDao {
             while (rs.next ()) {
 
                 Occupation o = new Occupation ();
-                o.setId (rs.getInt ("ID"));
-                o.setName (rs.getString ("NAME"));
-                o.setDescription (rs.getString ("DESCRIPTION"));
+                o.setId (rs.getInt ("id"));
+                o.setName (rs.getString ("name"));
+                o.setDescription (rs.getString ("description"));
 
                 // Add new object to list.
                 occupations.add (o);
@@ -107,8 +108,42 @@ public class OccupationDaoJDBC implements IOccupationDao {
     }
 
     @Override
-    public void update(Occupation target) {
+    public void update(Occupation occupation) {
+    	
+    	try {
+    		logger.debug ("Getting new connection...");
+            Connection conn = ConectionBD.getConnection ();
+            
+            
+            String sql = "update occupation set name = ? and description = ?)";
+            PreparedStatement ps = conn.prepareStatement (sql);
+            ps.setString (1, occupation.getName ());
+            ps.setString (2, occupation.getDescription ());
+            
+            // Execute the query.
+            logger.debug (String.format ("Executing query [%s]", sql));
+            int c = ps.executeUpdate ();
+            
+            // Read the result.
+            if (c == 0) {
 
+                throw new DaoException ("Failure inserting new occupations!");
+            }
+            
+    	}catch (SQLException e) {
+    		
+    		// Failure.
+            logger.error ("Failure 1 inserting new occupation!");
+            throw new DaoException (" Error 1: Failure inserting new occupation !", e);
+            
+    	}catch(Exception e) {
+    		
+    		// Failure.
+            logger.error ("Failure 2 inserting new occupation!");
+            throw new DaoException (e.getMessage (), e);
+    	
+    	}
+    	
     }
 
     @Override
