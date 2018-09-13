@@ -1,5 +1,6 @@
-package com.cagmeini.serviciosya.dao;
+package com.cagmeini.serviciosya.dao.jdbc;
 
+import com.cagmeini.serviciosya.dao.DaoException;
 import org.apache.commons.dbcp2.BasicDataSource;
 
 import java.sql.Connection;

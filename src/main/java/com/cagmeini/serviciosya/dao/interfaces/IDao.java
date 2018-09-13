@@ -1,4 +1,4 @@
-package com.cagmeini.serviciosya.dao;
+package com.cagmeini.serviciosya.dao.interfaces;
 
 import java.util.List;
 

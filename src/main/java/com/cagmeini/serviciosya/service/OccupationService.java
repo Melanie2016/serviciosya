@@ -2,10 +2,7 @@
 package com.cagmeini.serviciosya.service;
 
 
-import java.util.List;
-
-import com.cagmeini.serviciosya.beans.domain.Occupation;
-import com.cagmeini.serviciosya.dao.IOccupationDao;
+import com.cagmeini.serviciosya.dao.interfaces.IOccupationDao;
 
 
 public class OccupationService {

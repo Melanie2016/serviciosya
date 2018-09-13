@@ -1,12 +1,13 @@
-package com.cagmeini.serviciosya.dao;
+package com.cagmeini.serviciosya.dao.jdbc;
 
 import com.cagmeini.serviciosya.beans.domain.Occupation;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
+import com.cagmeini.serviciosya.dao.DaoException;
+import com.cagmeini.serviciosya.dao.interfaces.IOccupationDao;
 import org.apache.log4j.Logger;
 
 public class OccupationDaoJDBC implements IOccupationDao {
@@ -59,7 +60,7 @@ public class OccupationDaoJDBC implements IOccupationDao {
 
             // Failure.
             logger.error ("Failure searching all occupations");
-            throw new DaoException ("Failure searching all occupations", e);
+            throw new DaoException("Failure searching all occupations", e);
         }
 
         // Return results.

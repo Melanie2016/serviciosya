@@ -4,8 +4,8 @@ package com.cagmeini.serviciosya.service.test;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.cagmeini.serviciosya.dao.IOccupationDao;
-import com.cagmeini.serviciosya.dao.OccupationDaoJDBC;
+import com.cagmeini.serviciosya.dao.interfaces.IOccupationDao;
+import com.cagmeini.serviciosya.dao.jdbc.OccupationDaoJDBC;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
