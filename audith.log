@@ -79,3 +79,9 @@
 2018-09-13 00:17:32 ERROR OccupationDaoJDBC:197 - Failure searching all occupations
 2018-09-13 00:18:51 INFO  OccupationServiceTest:152 - Starting occupation add test.
 2018-09-13 00:18:51 ERROR OccupationDaoJDBC:197 - Failure searching all occupations
+2018-09-13 08:10:59 INFO  OccupationServiceTest:152 - Starting occupation add test.
+2018-09-13 08:11:00 ERROR OccupationDaoJDBC:99 - Failure inserting new occupation!
+2018-09-13 08:13:03 INFO  OccupationServiceTest:152 - Starting occupation add test.
+2018-09-13 08:13:05 ERROR OccupationDaoJDBC:197 - Failure searching all occupations
+2018-09-13 08:28:34 INFO  OccupationServiceTest:152 - Starting occupation add test.
+2018-09-13 08:28:35 ERROR OccupationDaoJDBC:200 - Failure searching all occupations

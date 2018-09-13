@@ -122,23 +122,21 @@ public class OccupationDaoJDBC implements IOccupationDao {
             Statement statement = conn.createStatement ();
 
 
+            String sql = "insert into occupation (name, description) values (?, ?)";
+            PreparedStatement ps = conn.prepareStatement (sql);
+            ps.setString (1, occupation.getName ());
+            ps.setString (2, occupation.getDescription ());
+
+
             // Execute the query.
-            String sql = "update occupation set name = "+ occupation.getName()+""
-            		+ "where id =" + occupation.getId();
             logger.debug (String.format ("Executing query [%s]", sql));
-            ResultSet rs = statement.executeQuery (sql);
-            
+            int c = ps.executeUpdate ();
+
+
             // Read the result.
+            if (c == 0) {
 
-            while (rs.next ()) {
-
-                Occupation o = new Occupation ();
-                o.setId (rs.getInt ("id"));
-                o.setName (rs.getString ("name"));
-                o.setDescription (rs.getString ("description"));
-
-                // Add new object to list.
-                occupations.add (o);
+                throw new DaoException ("Failure inserting new occupations!");
             }
             
     	}catch (SQLException e) {
@@ -175,20 +173,25 @@ public class OccupationDaoJDBC implements IOccupationDao {
             logger.debug ("Getting new connection...");
             Connection conn = ConectionBD.getConnection ();
 
-            String sql = "select * from occupation where id = 1 ";
+            String sql = "select * from occupation where id = ? ";
             PreparedStatement ps = conn.prepareStatement (sql);
             ps.setInt(1, occupation.getId ());
 
 
             // Execute the query.
             logger.debug (String.format ("Executing query [%s]", sql));
-            int c = ps.executeUpdate ();
+            ResultSet rs = ps.executeQuery (sql);
+
 
 
             // Read the result.
-            if (c == 0) {
 
-                throw new DaoException ("Failure inserting new occupations!");
+            while (rs.next ()) {
+
+                occupation.setId (rs.getInt ("id"));
+                occupation.setName (rs.getString ("name"));
+                occupation.setDescription (rs.getString ("description"));
+
             }
 
         } catch (Exception e) {
