@@ -16,3 +16,66 @@
 2018-09-12 17:29:10 INFO  OccupationServiceTest:113 - Add new list empty
 2018-09-12 17:29:48 INFO  OccupationServiceTest:93 - Starting occupation add test.
 2018-09-12 17:29:48 INFO  OccupationServiceTest:113 - Add new list empty
+2018-09-12 19:01:47 INFO  OccupationServiceTest:133 - Starting occupation add test.
+2018-09-12 19:01:48 ERROR OccupationDaoJDBC:136 - Failure 1 inserting new occupation!
+2018-09-12 19:02:14 INFO  OccupationServiceTest:133 - Starting occupation add test.
+2018-09-12 19:02:14 ERROR OccupationDaoJDBC:136 - Failure 1 inserting new occupation!
+2018-09-12 19:04:44 INFO  OccupationServiceTest:133 - Starting occupation add test.
+2018-09-12 19:04:44 ERROR OccupationDaoJDBC:137 - Failure 1 inserting new occupation!
+2018-09-12 19:05:16 INFO  OccupationServiceTest:133 - Starting occupation add test.
+2018-09-12 19:05:16 ERROR OccupationDaoJDBC:137 - Failure 1 inserting new occupation!
+2018-09-12 19:05:43 INFO  OccupationServiceTest:133 - Starting occupation add test.
+2018-09-12 19:05:43 ERROR OccupationDaoJDBC:142 - Failure 2 inserting new occupation!
+2018-09-12 19:06:37 INFO  OccupationServiceTest:133 - Starting occupation add test.
+2018-09-12 19:06:37 ERROR OccupationDaoJDBC:142 - Failure 2 inserting new occupation!
+2018-09-12 19:08:09 INFO  OccupationServiceTest:133 - Starting occupation add test.
+2018-09-12 19:08:09 ERROR OccupationDaoJDBC:142 - Failure 2 inserting new occupation!
+2018-09-12 19:08:20 INFO  OccupationServiceTest:133 - Starting occupation add test.
+2018-09-12 19:08:20 ERROR OccupationDaoJDBC:142 - Failure 2 inserting new occupation!
+2018-09-12 19:08:30 INFO  OccupationServiceTest:133 - Starting occupation add test.
+2018-09-12 19:08:30 ERROR OccupationDaoJDBC:142 - Failure 2 inserting new occupation!
+2018-09-12 19:18:04 INFO  OccupationServiceTest:133 - Starting occupation add test.
+2018-09-12 19:18:05 ERROR OccupationDaoJDBC:141 - Failure 2 inserting new occupation!
+2018-09-12 23:16:41 INFO  OccupationServiceTest:133 - Starting occupation add test.
+2018-09-12 23:16:42 ERROR OccupationDaoJDBC:135 - Failure 1 inserting new occupation!
+2018-09-12 23:17:49 INFO  OccupationServiceTest:133 - Starting occupation add test.
+2018-09-12 23:17:49 ERROR OccupationDaoJDBC:135 - Failure 1 inserting new occupation!
+2018-09-12 23:18:05 INFO  OccupationServiceTest:133 - Starting occupation add test.
+2018-09-12 23:18:05 ERROR OccupationDaoJDBC:135 - Failure 1 inserting new occupation!
+2018-09-12 23:18:26 INFO  OccupationServiceTest:133 - Starting occupation add test.
+2018-09-12 23:18:26 ERROR OccupationDaoJDBC:141 - Failure 2 inserting new occupation!
+2018-09-12 23:24:37 INFO  OccupationServiceTest:133 - Starting occupation add test.
+2018-09-12 23:24:38 ERROR OccupationDaoJDBC:141 - Failure 2 inserting new occupation!
+2018-09-12 23:29:46 INFO  OccupationServiceTest:151 - Starting occupation add test.
+2018-09-12 23:29:47 ERROR OccupationDaoJDBC:192 - Failure searching all occupations
+2018-09-12 23:35:04 INFO  OccupationServiceTest:152 - Starting occupation add test.
+2018-09-12 23:35:05 ERROR OccupationDaoJDBC:192 - Failure searching all occupations
+2018-09-12 23:35:36 INFO  OccupationServiceTest:152 - Starting occupation add test.
+2018-09-12 23:36:29 INFO  OccupationServiceTest:152 - Starting occupation add test.
+2018-09-12 23:43:53 INFO  OccupationServiceTest:152 - Starting occupation add test.
+2018-09-12 23:48:30 INFO  OccupationServiceTest:132 - Starting occupation add test.
+2018-09-12 23:48:31 ERROR OccupationDaoJDBC:147 - Failure 1 inserting new occupation!
+2018-09-12 23:49:38 INFO  OccupationServiceTest:132 - Starting occupation add test.
+2018-09-12 23:49:39 ERROR OccupationDaoJDBC:147 - Failure 1 inserting new occupation!
+2018-09-12 23:58:21 INFO  OccupationServiceTest:151 - Starting occupation add test.
+2018-09-13 00:00:59 INFO  OccupationServiceTest:151 - Starting occupation add test.
+2018-09-13 00:01:44 INFO  OccupationServiceTest:151 - Starting occupation add test.
+2018-09-13 00:03:12 INFO  OccupationServiceTest:151 - Starting occupation add test.
+2018-09-13 00:03:30 INFO  OccupationServiceTest:65 - Starting occupation add test.
+2018-09-13 00:03:31 INFO  OccupationServiceTest:151 - Starting occupation add test.
+2018-09-13 00:03:31 INFO  OccupationServiceTest:93 - Starting occupation add test.
+2018-09-13 00:03:36 INFO  OccupationServiceTest:151 - Starting occupation add test.
+2018-09-13 00:06:08 INFO  OccupationServiceTest:151 - Starting occupation add test.
+2018-09-13 00:06:09 ERROR OccupationDaoJDBC:198 - Failure searching all occupations
+2018-09-13 00:07:23 INFO  OccupationServiceTest:151 - Starting occupation add test.
+2018-09-13 00:07:45 INFO  OccupationServiceTest:151 - Starting occupation add test.
+2018-09-13 00:07:45 ERROR OccupationDaoJDBC:198 - Failure searching all occupations
+2018-09-13 00:09:57 INFO  OccupationServiceTest:151 - Starting occupation add test.
+2018-09-13 00:09:57 ERROR OccupationDaoJDBC:197 - Failure searching all occupations
+2018-09-13 00:10:57 INFO  OccupationServiceTest:151 - Starting occupation add test.
+2018-09-13 00:17:01 INFO  OccupationServiceTest:152 - Starting occupation add test.
+2018-09-13 00:17:02 ERROR OccupationDaoJDBC:197 - Failure searching all occupations
+2018-09-13 00:17:32 INFO  OccupationServiceTest:152 - Starting occupation add test.
+2018-09-13 00:17:32 ERROR OccupationDaoJDBC:197 - Failure searching all occupations
+2018-09-13 00:18:51 INFO  OccupationServiceTest:152 - Starting occupation add test.
+2018-09-13 00:18:51 ERROR OccupationDaoJDBC:197 - Failure searching all occupations

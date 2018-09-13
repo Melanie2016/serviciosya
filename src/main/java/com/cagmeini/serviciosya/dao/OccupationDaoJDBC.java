@@ -13,12 +13,12 @@ public class OccupationDaoJDBC implements IOccupationDao {
 
     private static final Logger logger = Logger.getLogger (OccupationDaoJDBC.class);
 
-
+    
     public OccupationDaoJDBC () {
 
         super ();
     }
-
+    // https://www.tutorialspoint.com/jdbc/jdbc-update-records.htm => machete
 
     @Override
     public List<Occupation> findAll () {
@@ -110,24 +110,35 @@ public class OccupationDaoJDBC implements IOccupationDao {
     @Override
     public void update(Occupation occupation) {
     	
+    	// Occupations list.
+        List<Occupation> occupations = new ArrayList<> ();
+        
     	try {
+    		
     		logger.debug ("Getting new connection...");
             Connection conn = ConectionBD.getConnection ();
             
             
-            String sql = "update occupation set name = ? and description = ?)";
-            PreparedStatement ps = conn.prepareStatement (sql);
-            ps.setString (1, occupation.getName ());
-            ps.setString (2, occupation.getDescription ());
-            
+            Statement statement = conn.createStatement ();
+
+
             // Execute the query.
+            String sql = "update occupation set name = "+ occupation.getName()+""
+            		+ "where id =" + occupation.getId();
             logger.debug (String.format ("Executing query [%s]", sql));
-            int c = ps.executeUpdate ();
+            ResultSet rs = statement.executeQuery (sql);
             
             // Read the result.
-            if (c == 0) {
 
-                throw new DaoException ("Failure inserting new occupations!");
+            while (rs.next ()) {
+
+                Occupation o = new Occupation ();
+                o.setId (rs.getInt ("id"));
+                o.setName (rs.getString ("name"));
+                o.setDescription (rs.getString ("description"));
+
+                // Add new object to list.
+                occupations.add (o);
             }
             
     	}catch (SQLException e) {
@@ -151,8 +162,44 @@ public class OccupationDaoJDBC implements IOccupationDao {
 
     }
 
+    
     @Override
     public Occupation findById(Integer id) {
-        return null;
+    	
+
+        Occupation occupation = new Occupation();
+        
+        try {
+
+        	// Get connection.
+            logger.debug ("Getting new connection...");
+            Connection conn = ConectionBD.getConnection ();
+
+            String sql = "select * from occupation where id = 1 ";
+            PreparedStatement ps = conn.prepareStatement (sql);
+            ps.setInt(1, occupation.getId ());
+
+
+            // Execute the query.
+            logger.debug (String.format ("Executing query [%s]", sql));
+            int c = ps.executeUpdate ();
+
+
+            // Read the result.
+            if (c == 0) {
+
+                throw new DaoException ("Failure inserting new occupations!");
+            }
+
+        } catch (Exception e) {
+
+            // Failure.
+            logger.error ("Failure searching all occupations");
+            throw new DaoException ("Failure searching all occupations", e);
+        }
+
+        // Return results.
+        return occupation;
+        
     }
 }

@@ -123,13 +123,69 @@ public class OccupationServiceTest {
         Assert.assertTrue(r);
        
     }
+
     
     
+    @Test
+    public void testUpdate() {
+    	
+    	// Insert new value.
+        logger.info ("Starting occupation add test.");
+        IOccupationDao dao = new OccupationDaoJDBC();
+    	
+        logger.debug("Inserting new occupation.");
+        Occupation o1 = new Occupation();
+    	o1.setId(14);
+    	o1.setName("lololo");
+    	o1.setDescription("...");
+    	
+    	dao.update(o1);
+    	
+    	Assert.assertEquals(o1.getName(), "lololo");
+    	
+    }
     
     
+    @Test
+    public void testFindById() {
+    	
+    	logger.info ("Starting occupation add test.");
+    	IOccupationDao dao = new OccupationDaoJDBC();
+    	
+    	logger.debug ("Inserting new occupation.");
+    	Occupation o1 = new Occupation();
+    	Occupation o2 = new Occupation();
+    	
+    	o1.setId(1);
+    	o1.setName("lala1");
+    	o1.setDescription("...");
+    	
+    	
+    	dao.create(o1);
+    	
+    	
+    	logger.debug ("Checking test result.");
+        Occupation oo = dao.findById(o1.getId());
+
+        boolean r = Boolean.FALSE;
+
+        
+
+            if (oo.getName ().equals (o1.getName())) {
+                r = Boolean.TRUE;
+                
+            }
+            
+        
     
+        
+    			
+    	Assert.assertTrue(r);
+    	
+    	
+       
     
-    
+    }
     
     
     
