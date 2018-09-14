@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.cagmeini.serviciosya.dao.interfaces.IOccupationDao;
+import com.cagmeini.serviciosya.dao.jdbc.IOccupationDaoJDBC;
 import com.cagmeini.serviciosya.dao.jdbc.OccupationDaoJDBC;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
@@ -27,7 +28,7 @@ public class OccupationServiceTest {
 
             // Insert new value.
             logger.info ("Starting occupation add test.");
-            IOccupationDao dao = new OccupationDaoJDBC();
+            IOccupationDaoJDBC dao = new OccupationDaoJDBC();
 
             logger.debug ("Inserting new occupation.");
             Occupation c = new Occupation ();
@@ -63,7 +64,7 @@ public class OccupationServiceTest {
     public void testFindAll() {
     	
     	logger.info ("Starting occupation add test.");
-    	IOccupationDao dao = new OccupationDaoJDBC();
+    	IOccupationDaoJDBC dao = new OccupationDaoJDBC();
     	
     	logger.debug ("Inserting new occupation.");
     	Occupation o1 = new Occupation();
@@ -91,7 +92,7 @@ public class OccupationServiceTest {
     	
     	// Insert new value.
         logger.info ("Starting occupation add test.");
-        IOccupationDao dao = new OccupationDaoJDBC();
+        IOccupationDaoJDBC dao = new OccupationDaoJDBC();
     	
     	
         logger.debug("Inserting new occupation.");
@@ -131,7 +132,7 @@ public class OccupationServiceTest {
     	
     	// Insert new value.
         logger.info ("Starting occupation add test.");
-        IOccupationDao dao = new OccupationDaoJDBC();
+        IOccupationDaoJDBC dao = new OccupationDaoJDBC();
     	
         logger.debug("Inserting new occupation.");
         Occupation o1 = new Occupation();
@@ -150,7 +151,7 @@ public class OccupationServiceTest {
     public void testFindById() {
     	
     	logger.info ("Starting occupation add test.");
-    	IOccupationDao dao = new OccupationDaoJDBC();
+    	IOccupationDaoJDBC dao = new OccupationDaoJDBC();
     	
     	logger.debug ("Inserting new occupation.");
     	Occupation o1 = new Occupation();

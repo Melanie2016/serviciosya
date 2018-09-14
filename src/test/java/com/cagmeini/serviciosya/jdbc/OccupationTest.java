@@ -2,6 +2,7 @@ package com.cagmeini.serviciosya.jdbc;
 
 import com.cagmeini.serviciosya.beans.domain.Occupation;
 import com.cagmeini.serviciosya.dao.interfaces.IOccupationDao;
+import com.cagmeini.serviciosya.dao.jdbc.IOccupationDaoJDBC;
 import com.cagmeini.serviciosya.dao.jdbc.OccupationDaoJDBC;
 import com.cagmeini.serviciosya.service.test.OccupationServiceTest;
 import org.apache.log4j.Logger;
@@ -23,7 +24,7 @@ public class OccupationTest {
 
             // Insert new value.
             logger.info ("Starting occupation add test.");
-            IOccupationDao dao = new OccupationDaoJDBC();
+            IOccupationDaoJDBC dao = new OccupationDaoJDBC();
 
             logger.debug ("Inserting new occupation.");
             Occupation c = new Occupation ();
