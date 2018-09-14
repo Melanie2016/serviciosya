@@ -18,6 +18,7 @@
         <mapping class="com.cagmeini.serviciosya.beans.entity.CountryEntity" />
 		<mapping class="com.cagmeini.serviciosya.beans.entity.ProvinceEntity" />
 		<mapping class="com.cagmeini.serviciosya.beans.entity.CityEntity" />
+		<mapping class="com.cagmeini.serviciosya.beans.entity.OccupationEntity" />
 		
     </session-factory>
 
