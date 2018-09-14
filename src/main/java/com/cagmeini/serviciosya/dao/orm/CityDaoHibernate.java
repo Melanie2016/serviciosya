@@ -8,16 +8,12 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
-import com.cagmeini.serviciosya.beans.entity.ProvinceEntity;
+import com.cagmeini.serviciosya.beans.entity.CityEntity;
 import com.cagmeini.serviciosya.dao.DaoException;
-import com.cagmeini.serviciosya.dao.interfaces.IProvinceDao;
+import com.cagmeini.serviciosya.dao.interfaces.ICityDao;
 
+public class CityDaoHibernate implements ICityDao {
 
-
-
-public class ProvinceDaoHibernate implements IProvinceDao{
-	
-	
 	
 	private SessionFactory sessionFactory = HibernateUtil.getSessionAnnotationFactory ();
 
@@ -25,7 +21,7 @@ public class ProvinceDaoHibernate implements IProvinceDao{
     private static final Logger logger= Logger.getLogger (ProvinceDaoHibernate.class);
     
 	@Override
-	public void create(ProvinceEntity target) {
+	public void create(CityEntity target) {
 
 		if (target == null) {
 
@@ -60,11 +56,11 @@ public class ProvinceDaoHibernate implements IProvinceDao{
 	}
 
 	@Override
-	public void update(ProvinceEntity target) {
+	public void update(CityEntity target) {
 		// Validate the arguments.
 		
 		if(target == null ) {
-			logger.warn ("Province object is null");
+			logger.warn ("City object is null");
 			return;
 		}
 				
@@ -78,16 +74,16 @@ public class ProvinceDaoHibernate implements IProvinceDao{
 			session = this.sessionFactory.openSession();
 			t = session.beginTransaction();
 				
-			logger.debug (String.format ("Updating new Province %s", target));
+			logger.debug (String.format ("Updating new city %s", target));
 					
 			session.update(target);
 			t.commit(); // guardar el cambio 
 					
-			logger.debug(String.format("New Province %s" , target));
+			logger.debug(String.format("New city %s" , target));
 					
 		}catch (Exception e) {
 					
-			logger.error("Error updating new Province");
+			logger.error("Error updating new city");
 			t.rollback();
 					
 			throw new DaoException(e.getMessage(), e);
@@ -104,7 +100,7 @@ public class ProvinceDaoHibernate implements IProvinceDao{
 	public void delete(Integer id) {// Validate the arguments.
 		
 		if(id == null ) {
-			logger.warn ("Province object is null");
+			logger.warn ("City object is null");
 			return;
 		}
 		
@@ -118,17 +114,17 @@ public class ProvinceDaoHibernate implements IProvinceDao{
 			session = this.sessionFactory.openSession();
 			t = session.beginTransaction();
 			
-			logger.debug (String.format ("Deleting province by id %s", id.toString ()));
+			logger.debug (String.format ("Deleting city by id %s", id.toString ()));
 			// buscamos el objeto por el id q le mando 
-			ProvinceEntity p = (ProvinceEntity) session.get(ProvinceEntity.class, id);
+			CityEntity p = (CityEntity) session.get(CityEntity.class, id);
 			
 			if ( p != null) {
 				session.delete(p);
 				t.commit();
-                logger.debug (String.format ("Province by id %s deleted!", id.toString ()));
+                logger.debug (String.format ("City by id %s deleted!", id.toString ()));
 
 			}else {
-                logger.warn (String.format ("Province by id %s not found!", id.toString ()));
+                logger.warn (String.format ("City by id %s not found!", id.toString ()));
             }
 			
 		}catch (Exception e) {
@@ -144,11 +140,11 @@ public class ProvinceDaoHibernate implements IProvinceDao{
 		
 	}
 
-	@SuppressWarnings("unchecked")
+	
 	@Override
-	public List<ProvinceEntity> findAll() {
+	public List<CityEntity> findAll() {
 
-		List<ProvinceEntity> list = null ;
+		List<CityEntity> list = null ;
 		
 		Session session = null;
 		try {
@@ -156,12 +152,12 @@ public class ProvinceDaoHibernate implements IProvinceDao{
             logger.debug ("Getting hibernate session...");
             session = this.sessionFactory.openSession ();
 
-            logger.debug ("Finding all provinces");
-            list = (List<ProvinceEntity>) session.createCriteria (ProvinceEntity.class).list ();
+            logger.debug ("Finding all city");
+            list = (List<CityEntity>) session.createCriteria (CityEntity.class).list ();
 
         } catch (Exception e) {
 
-            logger.error ("Error finding all provinces id");
+            logger.error ("Error finding all city id");
             throw new DaoException (e.getMessage (), e);
 
         } finally {
@@ -173,7 +169,7 @@ public class ProvinceDaoHibernate implements IProvinceDao{
 	}
 
 	@Override
-	public ProvinceEntity findById(Integer id) {
+	public CityEntity findById(Integer id) {
 		
 		// Validate the arguments.
         if (id == null) {
@@ -189,7 +185,7 @@ public class ProvinceDaoHibernate implements IProvinceDao{
             session = this.sessionFactory.openSession ();
 
             logger.debug (String.format ("Finding province by id %s", id.toString ()));
-            ProvinceEntity p = (ProvinceEntity) session.createCriteria(ProvinceEntity.class)
+            CityEntity p = (CityEntity) session.createCriteria(CityEntity.class)
             					.add(Restrictions.eq("id",id)).uniqueResult();
             
             		
@@ -215,7 +211,6 @@ public class ProvinceDaoHibernate implements IProvinceDao{
 		
 	}
 
-	
 	
 	
 	

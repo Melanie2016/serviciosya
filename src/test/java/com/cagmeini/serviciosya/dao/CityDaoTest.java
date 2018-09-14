@@ -5,21 +5,22 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.cagmeini.serviciosya.beans.entity.CityEntity;
 import com.cagmeini.serviciosya.beans.entity.CountryEntity;
 import com.cagmeini.serviciosya.beans.entity.ProvinceEntity;
+import com.cagmeini.serviciosya.dao.interfaces.ICityDao;
 import com.cagmeini.serviciosya.dao.interfaces.ICountryDao;
 import com.cagmeini.serviciosya.dao.interfaces.IProvinceDao;
+import com.cagmeini.serviciosya.dao.orm.CityDaoHibernate;
 import com.cagmeini.serviciosya.dao.orm.CountryDaoHibernate;
 import com.cagmeini.serviciosya.dao.orm.ProvinceDaoHibernate;
 
+public class CityDaoTest {
 
-
-public class ProvinceDaoTest {
-
-	
 	
 	private IProvinceDao dao = new ProvinceDaoHibernate();
 	private ICountryDao daoC = new CountryDaoHibernate();
+	private ICityDao daoCity = new CityDaoHibernate();
 
     @Test
     public void testCreate () {
@@ -29,9 +30,14 @@ public class ProvinceDaoTest {
     	this.daoC.create(c);
     	
         ProvinceEntity p = new ProvinceEntity();
-        p.setName ("Cordoba");
+        p.setName ("Buenos Aires");
         p.setCountry(c);
         this.dao.create(p);
+        
+        CityEntity cc = new CityEntity();
+        cc.setName("Castelar");
+        cc.setProvince(p);
+        this.daoCity.create(cc);
 
         Assert.assertNotNull ("Failure creating new province.", p.getId ());
     }
@@ -44,29 +50,34 @@ public class ProvinceDaoTest {
     	this.daoC.create(c);
     	
     	ProvinceEntity p = new ProvinceEntity ();
-        p.setId (11);
-        p.setName ("BUENOS AIRES");
+        p.setName ("Buenos aires");
         p.setCountry(c);
-        this.dao.update (p);
+        this.dao.create (p);
+        
+        CityEntity cc = new CityEntity();
+        cc.setId(4);
+        cc.setName("CASTELAR");
+        cc.setProvince(p);
+        this.daoCity.update(cc);
 
-        Assert.assertEquals ("Failure updating country.", "BUENOS AIRES", p.getName ());
+        Assert.assertEquals ("Failure updating country.", "CASTELAR", cc.getName ());
     }
 
     @Test
     public void testDelete () {
 
-        int id = 10;
-        this.dao.delete (id);
+        int id = 4;
+        this.daoCity.delete (id);
 
-        ProvinceEntity p = this.dao.findById (id);
+        CityEntity c  = this.daoCity.findById(id);
 
-        Assert.assertNull ("Failure deleting country.", p);
+        Assert.assertNull ("Failure deleting country.", c);
     }
 
     @Test
     public void testFindAll () {
 
-        List<ProvinceEntity> list = this.dao.findAll ();
+        List<CityEntity> list = this.daoCity.findAll ();
 
         list.forEach (System.out::println);
 
@@ -76,11 +87,11 @@ public class ProvinceDaoTest {
     @Test
     public void testFindById () {
 
-    	// i know that province name is "Cordoba"
-    	Integer id = 14;
-        ProvinceEntity p = this.dao.findById(id);
+    	// i know that province name is "Castelar"
+    	Integer id = 3;
+        CityEntity p = this.daoCity.findById(id);
 
-        String valorEsperado = "Cordoba";
+        String valorEsperado = "Castelar";
         
         
 //        Assert.assertNotNull(p);
@@ -88,4 +99,5 @@ public class ProvinceDaoTest {
         
         System.out.println(p.toString());
     }
+    
 }
