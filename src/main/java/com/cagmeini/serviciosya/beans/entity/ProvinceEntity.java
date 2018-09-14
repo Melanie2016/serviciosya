@@ -59,5 +59,11 @@ public class ProvinceEntity {
 	public void setCountry(CountryEntity country) {
 		this.country = country;
 	}
+
+	@Override
+	public String toString() {
+		return "ProvinceEntity [id=" + id + ", name=" + name + ", country=" + country + "]";
+	}
+	
 	
 }

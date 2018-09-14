@@ -43,6 +43,13 @@ public class CountryEntity {
     public void setName(String name) {
         this.name = name;
     }
+
+	@Override
+	public String toString() {
+		return "CountryEntity [id=" + id + ", name=" + name + "]";
+	}
+    
+    
     
     
 }

@@ -29,7 +29,7 @@ public class ProvinceDaoTest {
     	this.daoC.create(c);
     	
         ProvinceEntity p = new ProvinceEntity();
-        p.setName ("San luis");
+        p.setName ("Cordoba");
         p.setCountry(c);
         this.dao.create(p);
 
@@ -55,7 +55,7 @@ public class ProvinceDaoTest {
     @Test
     public void testDelete () {
 
-        int id = 4;
+        int id = 10;
         this.dao.delete (id);
 
         ProvinceEntity p = this.dao.findById (id);
@@ -71,5 +71,21 @@ public class ProvinceDaoTest {
         list.forEach (System.out::println);
 
         Assert.assertFalse ("Failure find all countries.", list.isEmpty ());
+    }
+    
+    @Test
+    public void testFindById () {
+
+    	// i know that province name is "Cordoba"
+    	Integer id = 14;
+        ProvinceEntity p = this.dao.findById(id);
+
+        String valorEsperado = "Cordoba";
+        
+        
+//        Assert.assertNotNull(p);
+        Assert.assertEquals(p.getName(), valorEsperado);
+        
+        System.out.println(p.toString());
     }
 }
