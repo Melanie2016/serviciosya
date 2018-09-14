@@ -16,14 +16,15 @@ public class OccupationDaoTest {
     public void testCreate () {
     	
     	OccupationEntity parent = new OccupationEntity();
-    	parent.setName("Ocupacion 1");
-    	parent.setDescription("lala..");
+
+    	parent.setDescription("parent...");
+		parent.setName("Ocupacion parent");
     	parent.setParent(null);
-    	this.dao.create(parent);
-    	
+		this.dao.create(parent);
     	OccupationEntity o1 = new OccupationEntity();
-    	o1.setName("Ocupacion 1");
+
     	o1.setDescription("lala..");
+		o1.setName("Ocupacion 1");
     	o1.setParent(parent);
     	
     	this.dao.create(o1);

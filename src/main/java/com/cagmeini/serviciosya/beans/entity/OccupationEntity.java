@@ -1,18 +1,14 @@
 package com.cagmeini.serviciosya.beans.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity(name= "Occupation")
 @Table(name="occupation")
 public class OccupationEntity {
 
-	
+
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id" , nullable = false,insertable = false,updatable = false)
@@ -23,18 +19,22 @@ public class OccupationEntity {
 
     @Column (name ="description", length = 48,nullable = false)
     private String description;
-    
+
     @ManyToOne
-    private OccupationEntity parent;
-    
-    
+	@JoinColumn ( name = "parent",nullable = true)
+	private OccupationEntity parent;
+
+	@ManyToMany (mappedBy="occupations")
+	private Set<ProviderEntity> providers = new HashSet<>();
+
+
     // Constructors
-    
+
     public OccupationEntity() {
     	super();
     }
-    
-    
+
+
     public OccupationEntity(int id, String name, String desc) {
     	this.id = id;
     	this.name = name;
@@ -80,14 +80,21 @@ public class OccupationEntity {
 	public void setParent(OccupationEntity parent) {
 		this.parent = parent;
 	}
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+	public Set<ProviderEntity> getProviders() {
+
+		return providers;
+	}
+
+	public void setProviders(Set<ProviderEntity> providers) {
+
+		this.providers = providers;
+	}
+
+	@Override
+	public String toString() {
+		return "OccupationEntity{" +
+				"name='" + name + '\'' +
+				'}';
+	}
 }

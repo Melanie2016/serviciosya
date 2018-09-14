@@ -2276,3 +2276,159 @@ Caused by: org.dom4j.DocumentException: hibernate.org Nested exception: hibernat
 2018-09-14 01:46:20 ERROR SqlExceptionHelper:146 - ERROR: no existe la columna «parent_id» en la relación «occupation»
   Position: 44
 2018-09-14 01:46:20 ERROR OccupationDaoHibernate:50 - Error creating new occupation com.cagmeini.serviciosya.beans.entity.OccupationEntity@7fb95505
+2018-09-14 08:04:28 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-09-14 08:04:28 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2018-09-14 08:04:28 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2018-09-14 08:04:28 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2018-09-14 08:04:28 INFO  Configuration:2075 - HHH000043: Configuring from resource: hibernate-annotation.cfg.xml
+2018-09-14 08:04:28 INFO  Configuration:2094 - HHH000040: Configuration resource: hibernate-annotation.cfg.xml
+2018-09-14 08:04:29 INFO  Configuration:2216 - HHH000041: Configured SessionFactory: null
+2018-09-14 08:04:30 WARN  DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2018-09-14 08:04:30 INFO  DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/serviciosya]
+2018-09-14 08:04:30 INFO  DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=postgres, password=****}
+2018-09-14 08:04:30 INFO  DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+2018-09-14 08:04:30 INFO  DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-09-14 08:04:32 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2018-09-14 08:04:32 INFO  LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2018-09-14 08:04:32 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2018-09-14 08:04:32 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-09-14 08:07:08 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-09-14 08:07:08 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2018-09-14 08:07:08 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2018-09-14 08:07:08 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2018-09-14 08:07:08 INFO  Configuration:2075 - HHH000043: Configuring from resource: hibernate-annotation.cfg.xml
+2018-09-14 08:07:08 INFO  Configuration:2094 - HHH000040: Configuration resource: hibernate-annotation.cfg.xml
+2018-09-14 08:07:09 INFO  Configuration:2216 - HHH000041: Configured SessionFactory: null
+2018-09-14 08:07:09 WARN  DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2018-09-14 08:07:09 INFO  DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/serviciosya]
+2018-09-14 08:07:09 INFO  DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=postgres, password=****}
+2018-09-14 08:07:09 INFO  DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+2018-09-14 08:07:09 INFO  DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-09-14 08:07:09 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2018-09-14 08:07:10 INFO  LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2018-09-14 08:07:10 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2018-09-14 08:07:10 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-09-14 08:08:16 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-09-14 08:08:16 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2018-09-14 08:08:16 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2018-09-14 08:08:16 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2018-09-14 08:08:16 INFO  Configuration:2075 - HHH000043: Configuring from resource: hibernate-annotation.cfg.xml
+2018-09-14 08:08:16 INFO  Configuration:2094 - HHH000040: Configuration resource: hibernate-annotation.cfg.xml
+2018-09-14 08:08:17 INFO  Configuration:2216 - HHH000041: Configured SessionFactory: null
+2018-09-14 08:08:17 WARN  DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2018-09-14 08:08:17 INFO  DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/serviciosya]
+2018-09-14 08:08:17 INFO  DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=postgres, password=****}
+2018-09-14 08:08:17 INFO  DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+2018-09-14 08:08:17 INFO  DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-09-14 08:08:18 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2018-09-14 08:08:18 INFO  LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2018-09-14 08:08:19 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2018-09-14 08:08:19 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-09-14 08:08:20 WARN  SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42703
+2018-09-14 08:08:20 ERROR SqlExceptionHelper:146 - ERROR: column "parent_id" of relation "occupation" does not exist
+  Position: 44
+2018-09-14 08:08:20 ERROR OccupationDaoHibernate:50 - Error creating new occupation com.cagmeini.serviciosya.beans.entity.OccupationEntity@1a20270e
+2018-09-14 08:10:07 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-09-14 08:10:07 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2018-09-14 08:10:07 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2018-09-14 08:10:07 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2018-09-14 08:10:07 INFO  Configuration:2075 - HHH000043: Configuring from resource: hibernate-annotation.cfg.xml
+2018-09-14 08:10:07 INFO  Configuration:2094 - HHH000040: Configuration resource: hibernate-annotation.cfg.xml
+2018-09-14 08:10:08 INFO  Configuration:2216 - HHH000041: Configured SessionFactory: null
+2018-09-14 08:10:08 WARN  DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2018-09-14 08:10:08 INFO  DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/serviciosya]
+2018-09-14 08:10:08 INFO  DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=postgres, password=****}
+2018-09-14 08:10:08 INFO  DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+2018-09-14 08:10:08 INFO  DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-09-14 08:10:09 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2018-09-14 08:10:09 INFO  LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2018-09-14 08:10:09 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2018-09-14 08:10:09 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-09-14 08:10:11 WARN  SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42703
+2018-09-14 08:10:11 ERROR SqlExceptionHelper:146 - ERROR: column "parent_id" of relation "occupation" does not exist
+  Position: 44
+2018-09-14 08:10:11 ERROR OccupationDaoHibernate:50 - Error creating new occupation com.cagmeini.serviciosya.beans.entity.OccupationEntity@1a20270e
+2018-09-14 08:11:11 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-09-14 08:11:11 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2018-09-14 08:11:11 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2018-09-14 08:11:11 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2018-09-14 08:11:11 INFO  Configuration:2075 - HHH000043: Configuring from resource: hibernate-annotation.cfg.xml
+2018-09-14 08:11:11 INFO  Configuration:2094 - HHH000040: Configuration resource: hibernate-annotation.cfg.xml
+2018-09-14 08:11:12 INFO  Configuration:2216 - HHH000041: Configured SessionFactory: null
+2018-09-14 08:11:12 WARN  DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2018-09-14 08:11:12 INFO  DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/serviciosya]
+2018-09-14 08:11:12 INFO  DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=postgres, password=****}
+2018-09-14 08:11:12 INFO  DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+2018-09-14 08:11:12 INFO  DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-09-14 08:11:13 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2018-09-14 08:11:13 INFO  LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2018-09-14 08:11:13 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2018-09-14 08:11:13 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-09-14 08:11:15 WARN  SqlExceptionHelper:144 - SQL Error: 0, SQLState: 42703
+2018-09-14 08:11:15 ERROR SqlExceptionHelper:146 - ERROR: column "parent_id" of relation "occupation" does not exist
+  Position: 44
+2018-09-14 08:11:15 ERROR OccupationDaoHibernate:50 - Error creating new occupation com.cagmeini.serviciosya.beans.entity.OccupationEntity@1a20270e
+2018-09-14 08:15:00 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-09-14 08:15:00 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2018-09-14 08:15:00 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2018-09-14 08:15:00 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2018-09-14 08:15:00 INFO  Configuration:2075 - HHH000043: Configuring from resource: hibernate-annotation.cfg.xml
+2018-09-14 08:15:00 INFO  Configuration:2094 - HHH000040: Configuration resource: hibernate-annotation.cfg.xml
+2018-09-14 08:15:00 INFO  Configuration:2216 - HHH000041: Configured SessionFactory: null
+2018-09-14 08:15:01 WARN  DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2018-09-14 08:15:01 INFO  DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/serviciosya]
+2018-09-14 08:15:01 INFO  DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=postgres, password=****}
+2018-09-14 08:15:01 INFO  DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+2018-09-14 08:15:01 INFO  DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-09-14 08:15:01 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2018-09-14 08:15:01 INFO  LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2018-09-14 08:15:02 ERROR HibernateUtil:49 - Initial SessionFactory creation failed.
+org.hibernate.AnnotationException: @Column(s) not allowed on a @ManyToOne property: com.cagmeini.serviciosya.beans.entity.OccupationEntity.parent
+	at org.hibernate.cfg.AnnotationBinder.processElementAnnotations(AnnotationBinder.java:1779)
+	at org.hibernate.cfg.AnnotationBinder.processIdPropertiesIfNotAlready(AnnotationBinder.java:963)
+	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:796)
+	at org.hibernate.cfg.Configuration$MetadataSourceQueue.processAnnotatedClassesQueue(Configuration.java:3845)
+	at org.hibernate.cfg.Configuration$MetadataSourceQueue.processMetadata(Configuration.java:3799)
+	at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1412)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1846)
+	at com.cagmeini.serviciosya.dao.orm.HibernateUtil.buildSessionAnnotationFactory(HibernateUtil.java:41)
+	at com.cagmeini.serviciosya.dao.orm.HibernateUtil.getSessionAnnotationFactory(HibernateUtil.java:59)
+	at com.cagmeini.serviciosya.dao.orm.OccupationDaoHibernate.<init>(OccupationDaoHibernate.java:21)
+	at com.cagmeini.serviciosya.dao.OccupationDaoTest.<init>(OccupationDaoTest.java:13)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:217)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.runReflectiveCall(BlockJUnit4ClassRunner.java:266)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+2018-09-14 08:21:46 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-09-14 08:21:46 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2018-09-14 08:21:46 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2018-09-14 08:21:46 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2018-09-14 08:21:46 INFO  Configuration:2075 - HHH000043: Configuring from resource: hibernate-annotation.cfg.xml
+2018-09-14 08:21:46 INFO  Configuration:2094 - HHH000040: Configuration resource: hibernate-annotation.cfg.xml
+2018-09-14 08:21:47 INFO  Configuration:2216 - HHH000041: Configured SessionFactory: null
+2018-09-14 08:21:47 WARN  DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2018-09-14 08:21:47 INFO  DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/serviciosya]
+2018-09-14 08:21:47 INFO  DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=postgres, password=****}
+2018-09-14 08:21:47 INFO  DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+2018-09-14 08:21:47 INFO  DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-09-14 08:21:48 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2018-09-14 08:21:48 INFO  LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2018-09-14 08:21:48 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2018-09-14 08:21:48 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory

@@ -17,7 +17,7 @@ public class CountryDaoTest {
     public void testCreate () {
 
         CountryEntity c = new CountryEntity ();
-        c.setName ("Chile");
+        c.setName ("Brasil");
         this.dao.create (c);
 
         Assert.assertNotNull ("Failure creating new country.", c.getId ());

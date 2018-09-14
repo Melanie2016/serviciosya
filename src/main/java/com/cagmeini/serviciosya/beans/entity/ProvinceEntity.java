@@ -17,6 +17,7 @@ public class ProvinceEntity {
     private String name;
 
     @ManyToOne
+	@JoinColumn (name="country_id")
     private CountryEntity country;
     
     
