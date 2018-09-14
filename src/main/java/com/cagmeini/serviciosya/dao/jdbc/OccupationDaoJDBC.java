@@ -10,7 +10,7 @@ import com.cagmeini.serviciosya.dao.DaoException;
 import com.cagmeini.serviciosya.dao.interfaces.IOccupationDao;
 import org.apache.log4j.Logger;
 
-public class OccupationDaoJDBC implements IOccupationDao {
+public class OccupationDaoJDBC implements IOccupationDaoJDBC {
 
     private static final Logger logger = Logger.getLogger (OccupationDaoJDBC.class);
 

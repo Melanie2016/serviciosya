@@ -3,11 +3,10 @@ package com.cagmeini.serviciosya.dao.interfaces;
 
 
 
-import com.cagmeini.serviciosya.beans.domain.Occupation;
-import com.cagmeini.serviciosya.dao.interfaces.IDao;
+import com.cagmeini.serviciosya.beans.entity.OccupationEntity;
 
 
-public interface IOccupationDao extends IDao<Occupation, Integer> {
+public interface IOccupationDao extends IDao<OccupationEntity, Integer> {
 
 
 
