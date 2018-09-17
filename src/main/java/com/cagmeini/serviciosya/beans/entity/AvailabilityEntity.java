@@ -1,6 +1,7 @@
 package com.cagmeini.serviciosya.beans.entity;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,10 +17,10 @@ public class AvailabilityEntity {
     private int id;
 	
 	@Column(name = "start_time", nullable = false, insertable = false, updatable = false)
-	private LocalDate startTime;
+	private LocalTime startTime;
 	
 	@Column(name = "end_time", nullable = false, insertable = false, updatable = false)
-	private LocalDate endTime;
+	private LocalTime endTime;
 
 	@Column(name = "day_of_attention", nullable = false, insertable = false, updatable = false)
 	private String dayOfAttention;
@@ -38,4 +39,32 @@ public class AvailabilityEntity {
 	
 	
 	
+	public AvailabilityEntity() {
+		
+	}
+	
+	
+	
+	public AvailabilityEntity(int id,LocalTime startTime, LocalTime endTime,String day) {
+		this.id = id;
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.dayOfAttention = day;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
+
