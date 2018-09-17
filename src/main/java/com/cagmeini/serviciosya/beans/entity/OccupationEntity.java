@@ -27,7 +27,7 @@ public class OccupationEntity {
 	@ManyToMany (mappedBy="occupations")
 	private Set<ProviderEntity> providers = new HashSet<>();
 	
-	@ManyToMany (mappedBy="occupations")
+	@ManyToMany (mappedBy="occupations") // es el nombre del atributo en la clase que mapea
 	private Set<AvailabilityEntity> availability = new HashSet<>();
 
 

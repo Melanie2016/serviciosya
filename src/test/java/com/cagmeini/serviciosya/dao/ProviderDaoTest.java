@@ -13,10 +13,13 @@ public class ProviderDaoTest {
 
     private IProviderDao dao = new ProviderDaoHibernate ();
 
-    
+
+	// @Rule buscar como usar una regla para recibir una exception
+
+
     //(expected=DaoException.class)
-	@Test 
-	public void testThatAnInvalidEmailHasNotBeenInserted ()  {
+	@Test (expected=DaoException.class)
+	public void testThatAnInvalidEmailHasNotBeenInserted ()  throws DaoException {
 	
 	    ProviderEntity p = new ProviderEntity ();
 	    p.setName("Bart");
@@ -31,15 +34,15 @@ public class ProviderDaoTest {
 	    p.setStatus(0);
 	    this.dao.create (p);
 	    
-//	    Boolean val = true;
-//	    		
-//	    if (p.getId() == 0) {
-//	    	val = false;
-//	    }
+	    Boolean val = true;
+
+	    if (p.getId() == 0) {
+	    	val = false;
+	    }
+
+	    Assert.assertFalse(val);
 	    
-//	    Assert.assertFalse(val);
-	    
-	    Assert.assertNotNull ("Failure creating new country.", p.getId ());
+	//    Assert.assertNotNull ("Failure creating new country.", p.getId ());
 	 }
 	
 	

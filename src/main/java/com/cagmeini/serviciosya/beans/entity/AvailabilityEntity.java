@@ -40,7 +40,7 @@ public class AvailabilityEntity {
 	
 	
 	public AvailabilityEntity() {
-		
+		super();
 	}
 	
 	
