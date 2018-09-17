@@ -26,6 +26,9 @@ public class OccupationEntity {
 
 	@ManyToMany (mappedBy="occupations")
 	private Set<ProviderEntity> providers = new HashSet<>();
+	
+	@ManyToMany (mappedBy="occupations")
+	private Set<AvailabilityEntity> availability = new HashSet<>();
 
 
     // Constructors

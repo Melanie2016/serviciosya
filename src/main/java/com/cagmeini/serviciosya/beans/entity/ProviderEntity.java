@@ -1,13 +1,26 @@
 package com.cagmeini.serviciosya.beans.entity;
 
-import org.hibernate.validator.constraints.CreditCardNumber;
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.Range;
-
-import javax.persistence.*;
-import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Range;
 
     @NamedQueries({
 
@@ -31,7 +44,7 @@ import java.util.Set;
         @Column(name = "name", length = 48, nullable = false)
         private String name;
 
-        @Column(name = "\"lastName\"", length = 48, nullable = false)
+        @Column(name = "lastname", length = 48, nullable = false)
         private String lastName;
 
         @Column(name = "phone", length = 48, nullable = false, unique = true)
@@ -63,7 +76,12 @@ import java.util.Set;
                 inverseJoinColumns = {@JoinColumn(name = "occupation_id")})
         private Set<OccupationEntity> occupations = new HashSet<>();
 
+        @ManyToMany(mappedBy="providers")   
+        private Set<OccupationEntity> availabilitys = new HashSet<>();
 
+        
+        
+        
         public ProviderEntity() {
 
             super();
