@@ -1,6 +1,7 @@
 package com.cagmeini.serviciosya.beans.entity;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 import javax.persistence.*;
 
@@ -9,12 +10,19 @@ import javax.persistence.*;
 public class ServiceEntity {
 
 	@Id
-	private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false, insertable = false, updatable = false)
+    private int id;
 	
 	private LocalDate date;
 	
 	private String category;
 	
+	private LocalTime time;  
 	
+	
+	@ManyToOne 
+	@JoinColumn(name="consumer_id")
+	private ConsumerEntity consumers ;
 	
 }
