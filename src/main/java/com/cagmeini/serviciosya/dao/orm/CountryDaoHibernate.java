@@ -4,7 +4,8 @@ import java.util.List;
 
 import com.cagmeini.serviciosya.beans.entity.CountryEntity;
 import com.cagmeini.serviciosya.dao.DaoException;
-import com.cagmeini.serviciosya.dao.interfaces.ICountryDao;
+import com.cagmeini.serviciosya.dao.repositories.ICountryDao;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 

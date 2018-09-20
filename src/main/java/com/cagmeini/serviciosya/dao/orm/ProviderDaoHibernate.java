@@ -10,7 +10,7 @@ import org.hibernate.criterion.Restrictions;
 
 import com.cagmeini.serviciosya.beans.entity.ProviderEntity;
 import com.cagmeini.serviciosya.dao.DaoException;
-import com.cagmeini.serviciosya.dao.interfaces.IProviderDao;
+import com.cagmeini.serviciosya.dao.repositories.IProviderDao;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;

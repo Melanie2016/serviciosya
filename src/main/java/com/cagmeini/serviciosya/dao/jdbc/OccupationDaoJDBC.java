@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.cagmeini.serviciosya.dao.DaoException;
-import com.cagmeini.serviciosya.dao.interfaces.IOccupationDao;
+import com.cagmeini.serviciosya.dao.repositories.IOccupationDao;
+
 import org.apache.log4j.Logger;
 
 public class OccupationDaoJDBC implements IOccupationDaoJDBC {

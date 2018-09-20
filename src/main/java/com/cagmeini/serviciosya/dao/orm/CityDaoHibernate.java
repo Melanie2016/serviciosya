@@ -10,7 +10,7 @@ import org.hibernate.criterion.Restrictions;
 
 import com.cagmeini.serviciosya.beans.entity.CityEntity;
 import com.cagmeini.serviciosya.dao.DaoException;
-import com.cagmeini.serviciosya.dao.interfaces.ICityDao;
+import com.cagmeini.serviciosya.dao.repositories.ICityDao;
 
 public class CityDaoHibernate implements ICityDao {
 

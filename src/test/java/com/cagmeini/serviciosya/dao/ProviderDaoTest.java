@@ -5,8 +5,8 @@ import org.junit.Test;
 
 import com.cagmeini.serviciosya.beans.entity.CityEntity;
 import com.cagmeini.serviciosya.beans.entity.ProviderEntity;
-import com.cagmeini.serviciosya.dao.interfaces.IProviderDao;
 import com.cagmeini.serviciosya.dao.orm.ProviderDaoHibernate;
+import com.cagmeini.serviciosya.dao.repositories.IProviderDao;
 
 public class ProviderDaoTest {
 

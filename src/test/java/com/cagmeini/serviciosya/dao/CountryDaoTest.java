@@ -1,8 +1,9 @@
 package com.cagmeini.serviciosya.dao;
 
 import com.cagmeini.serviciosya.beans.entity.CountryEntity;
-import com.cagmeini.serviciosya.dao.interfaces.ICountryDao;
 import com.cagmeini.serviciosya.dao.orm.CountryDaoHibernate;
+import com.cagmeini.serviciosya.dao.repositories.ICountryDao;
+
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,9 +1,9 @@
 package com.cagmeini.serviciosya.jdbc;
 
 import com.cagmeini.serviciosya.beans.domain.Occupation;
-import com.cagmeini.serviciosya.dao.interfaces.IOccupationDao;
 import com.cagmeini.serviciosya.dao.jdbc.IOccupationDaoJDBC;
 import com.cagmeini.serviciosya.dao.jdbc.OccupationDaoJDBC;
+import com.cagmeini.serviciosya.dao.repositories.IOccupationDao;
 import com.cagmeini.serviciosya.service.test.OccupationServiceTest;
 import org.apache.log4j.Logger;
 import org.junit.Assert;

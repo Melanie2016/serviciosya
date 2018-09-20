@@ -11,7 +11,7 @@ import org.hibernate.criterion.Restrictions;
 import com.cagmeini.serviciosya.beans.entity.CityEntity;
 import com.cagmeini.serviciosya.beans.entity.OccupationEntity;
 import com.cagmeini.serviciosya.dao.DaoException;
-import com.cagmeini.serviciosya.dao.interfaces.IOccupationDao;
+import com.cagmeini.serviciosya.dao.repositories.IOccupationDao;
 
 public class OccupationDaoHibernate implements IOccupationDao{
 

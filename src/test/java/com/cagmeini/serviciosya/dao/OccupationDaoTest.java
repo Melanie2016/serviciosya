@@ -4,8 +4,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import com.cagmeini.serviciosya.beans.entity.OccupationEntity;
-import com.cagmeini.serviciosya.dao.interfaces.IOccupationDao;
 import com.cagmeini.serviciosya.dao.orm.OccupationDaoHibernate;
+import com.cagmeini.serviciosya.dao.repositories.IOccupationDao;
 
 public class OccupationDaoTest {
 

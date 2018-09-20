@@ -1,5 +1,5 @@
 
-package com.cagmeini.serviciosya.dao.interfaces;
+package com.cagmeini.serviciosya.dao.repositories;
 
 
 

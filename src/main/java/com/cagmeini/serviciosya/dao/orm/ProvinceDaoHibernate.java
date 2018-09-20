@@ -10,7 +10,7 @@ import org.hibernate.criterion.Restrictions;
 
 import com.cagmeini.serviciosya.beans.entity.ProvinceEntity;
 import com.cagmeini.serviciosya.dao.DaoException;
-import com.cagmeini.serviciosya.dao.interfaces.IProvinceDao;
+import com.cagmeini.serviciosya.dao.repositories.IProvinceDao;
 
 
 

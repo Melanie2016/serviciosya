@@ -1,4 +1,4 @@
-package com.cagmeini.serviciosya.dao.interfaces;
+package com.cagmeini.serviciosya.dao.repositories;
 
 import com.cagmeini.serviciosya.beans.entity.ProvinceEntity;
 

@@ -2,7 +2,7 @@
 package com.cagmeini.serviciosya.service;
 
 
-import com.cagmeini.serviciosya.dao.interfaces.IOccupationDao;
+import com.cagmeini.serviciosya.dao.repositories.IOccupationDao;
 
 
 public class OccupationService {

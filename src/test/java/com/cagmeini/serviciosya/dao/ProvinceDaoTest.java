@@ -7,10 +7,10 @@ import org.junit.Test;
 
 import com.cagmeini.serviciosya.beans.entity.CountryEntity;
 import com.cagmeini.serviciosya.beans.entity.ProvinceEntity;
-import com.cagmeini.serviciosya.dao.interfaces.ICountryDao;
-import com.cagmeini.serviciosya.dao.interfaces.IProvinceDao;
 import com.cagmeini.serviciosya.dao.orm.CountryDaoHibernate;
 import com.cagmeini.serviciosya.dao.orm.ProvinceDaoHibernate;
+import com.cagmeini.serviciosya.dao.repositories.ICountryDao;
+import com.cagmeini.serviciosya.dao.repositories.IProvinceDao;
 
 
 
