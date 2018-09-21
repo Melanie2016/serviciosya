@@ -1,13 +1,13 @@
 package com.cagmeini.serviciosya.dao;
 
-import com.cagmeini.serviciosya.beans.entity.CountryEntity;
-import com.cagmeini.serviciosya.dao.orm.CountryDaoHibernate;
-import com.cagmeini.serviciosya.dao.repositories.ICountryDao;
-
-import org.junit.Assert;
-import org.junit.Test;
-
-import java.util.List;
+//import com.cagmeini.serviciosya.beans.entity.CountryEntity;
+//import com.cagmeini.serviciosya.dao.orm.CountryDaoHibernate;
+//import com.cagmeini.serviciosya.dao.repositories.ICountryDao;
+//
+//import org.junit.Assert;
+//import org.junit.Test;
+//
+//import java.util.List;
 
 public class CountryDaoTest {
 

@@ -1,11 +1,11 @@
 package com.cagmeini.serviciosya.dao;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-import com.cagmeini.serviciosya.beans.entity.OccupationEntity;
-import com.cagmeini.serviciosya.dao.orm.OccupationDaoHibernate;
-import com.cagmeini.serviciosya.dao.repositories.IOccupationDao;
+//import org.junit.Assert;
+//import org.junit.Test;
+//
+//import com.cagmeini.serviciosya.beans.entity.OccupationEntity;
+//import com.cagmeini.serviciosya.dao.orm.OccupationDaoHibernate;
+//import com.cagmeini.serviciosya.dao.repositories.IOccupationDao;
 
 public class OccupationDaoTest {
 

@@ -1,19 +1,19 @@
 package com.cagmeini.serviciosya.dao;
 
-import java.util.List;
-
-import org.junit.Assert;
-import org.junit.Test;
-
-import com.cagmeini.serviciosya.beans.entity.CityEntity;
-import com.cagmeini.serviciosya.beans.entity.CountryEntity;
-import com.cagmeini.serviciosya.beans.entity.ProvinceEntity;
-import com.cagmeini.serviciosya.dao.orm.CityDaoHibernate;
-import com.cagmeini.serviciosya.dao.orm.CountryDaoHibernate;
-import com.cagmeini.serviciosya.dao.orm.ProvinceDaoHibernate;
-import com.cagmeini.serviciosya.dao.repositories.ICityRepository;
-import com.cagmeini.serviciosya.dao.repositories.ICountryDao;
-import com.cagmeini.serviciosya.dao.repositories.IProvinceDao;
+//import java.util.List;
+//
+//import org.junit.Assert;
+//import org.junit.Test;
+//
+//import com.cagmeini.serviciosya.beans.entity.CityEntity;
+//import com.cagmeini.serviciosya.beans.entity.CountryEntity;
+//import com.cagmeini.serviciosya.beans.entity.ProvinceEntity;
+//import com.cagmeini.serviciosya.dao.orm.CityDaoHibernate;
+//import com.cagmeini.serviciosya.dao.orm.CountryDaoHibernate;
+//import com.cagmeini.serviciosya.dao.orm.ProvinceDaoHibernate;
+//import com.cagmeini.serviciosya.dao.repositories.ICityRepository;
+//import com.cagmeini.serviciosya.dao.repositories.ICountryDao;
+//import com.cagmeini.serviciosya.dao.repositories.IProvinceDao;
 
 public class CityDaoTest {
 

@@ -1,9 +1,18 @@
 package com.cagmeini.serviciosya.dao.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.cagmeini.serviciosya.beans.entity.CountryEntity;
 import com.cagmeini.serviciosya.beans.entity.ProvinceEntity;
 
+
+@Repository
 public interface IProvinceDao extends JpaRepository<ProvinceEntity, Integer> {
+
+	
+    List<ProvinceEntity> findAllByCountryOrderByNameDesc (CountryEntity country);
 
 }

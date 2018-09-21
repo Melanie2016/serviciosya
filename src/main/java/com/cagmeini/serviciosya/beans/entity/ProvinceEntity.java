@@ -9,7 +9,8 @@ public class ProvinceEntity {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Column(name="id" , nullable = false,insertable = false,updatable = false)
     private int id;
 
@@ -27,9 +28,10 @@ public class ProvinceEntity {
     	
     }
     
-    public ProvinceEntity(int id,String name) {
+    public ProvinceEntity(int id,String name,CountryEntity country) {
     	this.id = id;
     	this.name = name;
+    	this.country = country;
     	
     }
 
@@ -59,6 +61,46 @@ public class ProvinceEntity {
 
 	public void setCountry(CountryEntity country) {
 		this.country = country;
+	}
+
+	
+	
+	
+	
+	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((country == null) ? 0 : country.hashCode());
+		result = prime * result + id;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ProvinceEntity other = (ProvinceEntity) obj;
+		if (country == null) {
+			if (other.country != null)
+				return false;
+		} else if (!country.equals(other.country))
+			return false;
+		if (id != other.id)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
 	}
 
 	@Override
