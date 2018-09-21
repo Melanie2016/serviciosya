@@ -21,7 +21,9 @@ public class ServiceEntity {
 	@Column(name = "time", nullable = false, insertable = false, updatable = false)
 	private LocalTime time;  
 	
-	
+	// es ManyToOne porque considero a la clase servicio como el registro de 
+	// servicios contratados un consumidor puede contratar varios servicios 
+	// pero un proveedor no puede hacer dos services el mismo dia y horario o no deberia 
 	@ManyToOne 
 	@JoinColumn(name="consumer_id")
 	private ConsumerEntity consumers ;

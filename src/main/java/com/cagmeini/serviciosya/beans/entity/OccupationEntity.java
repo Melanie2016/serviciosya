@@ -21,7 +21,7 @@ public class OccupationEntity {
     private String description;
 
     @ManyToOne
-	@JoinColumn ( name = "parent",nullable = true)
+	@JoinColumn (name = "parent",nullable = true)
 	private OccupationEntity parent;
 
 	@ManyToMany (mappedBy="occupations")

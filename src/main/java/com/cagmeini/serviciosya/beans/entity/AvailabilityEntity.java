@@ -1,11 +1,20 @@
 package com.cagmeini.serviciosya.beans.entity;
 
-import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 @Entity(name = "Availability")
 @Table (name = "availability")
@@ -50,6 +59,78 @@ public class AvailabilityEntity {
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.dayOfAttention = day;
+	}
+
+
+
+	public int getId() {
+		return id;
+	}
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
+	public LocalTime getStartTime() {
+		return startTime;
+	}
+
+
+
+	public void setStartTime(LocalTime startTime) {
+		this.startTime = startTime;
+	}
+
+
+
+	public LocalTime getEndTime() {
+		return endTime;
+	}
+
+
+
+	public void setEndTime(LocalTime endTime) {
+		this.endTime = endTime;
+	}
+
+
+
+	public String getDayOfAttention() {
+		return dayOfAttention;
+	}
+
+
+
+	public void setDayOfAttention(String dayOfAttention) {
+		this.dayOfAttention = dayOfAttention;
+	}
+
+
+
+	public Set<OccupationEntity> getOccupations() {
+		return occupations;
+	}
+
+
+
+	public void setOccupations(Set<OccupationEntity> occupations) {
+		this.occupations = occupations;
+	}
+
+
+
+	public Set<ProviderEntity> getProviders() {
+		return providers;
+	}
+
+
+
+	public void setProviders(Set<ProviderEntity> providers) {
+		this.providers = providers;
 	}
 	
 	
