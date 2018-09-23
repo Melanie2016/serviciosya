@@ -22,7 +22,7 @@ public class AvailabilityEntity {
 	@Id
 //	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@GeneratedValue
-    @Column(name = "id", nullable = false, insertable = false, updatable = false)
+    @Column(name = "availability_id", nullable = false, insertable = false, updatable = false)
     private int id;
 	
 	@Column(name = "start_time", nullable = false, insertable = false, updatable = false)

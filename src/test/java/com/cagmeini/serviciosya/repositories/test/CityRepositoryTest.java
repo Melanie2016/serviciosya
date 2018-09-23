@@ -1,6 +1,7 @@
 package com.cagmeini.serviciosya.repositories.test;
 
 import java.util.Arrays;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -17,10 +18,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.cagmeini.serviciosya.beans.entity.CityEntity;
 import com.cagmeini.serviciosya.beans.entity.CountryEntity;
 import com.cagmeini.serviciosya.beans.entity.ProvinceEntity;
-import com.cagmeini.serviciosya.dao.repositories.ICityDao;
-import com.cagmeini.serviciosya.dao.repositories.ICountryDao;
-import com.cagmeini.serviciosya.dao.repositories.IProvinceDao;
-
+import com.cagmeini.serviciosya.dao.repositories.ICityRepository;
+import com.cagmeini.serviciosya.dao.repositories.ICountryRepository;
+import com.cagmeini.serviciosya.dao.repositories.IProvinceRepository;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -30,13 +30,13 @@ public class CityRepositoryTest {
 
 
     @Autowired
-    private IProvinceDao repositoryProvince = null;
+    private IProvinceRepository repositoryProvince = null;
 
     @Autowired
-    private ICountryDao repositoryCountry = null;
+    private ICountryRepository repositoryCountry = null;
 
     @Autowired
-    private ICityDao repositoryCity = null;
+    private ICityRepository repositoryCity = null;
 
 
 
@@ -50,11 +50,11 @@ public class CityRepositoryTest {
         logger.info ("Creating countries...");
         CountryEntity[] countries = new CountryEntity [] {
 
-                new CountryEntity (Integer.valueOf (1), "Argentina"),
-                new CountryEntity (Integer.valueOf (2), "Venezuela"),
-                new CountryEntity (Integer.valueOf (3), "Uruguay"),
-                new CountryEntity (Integer.valueOf (4), "Chile"),
-                new CountryEntity (Integer.valueOf (5), "Peru")
+                new CountryEntity (Integer.valueOf (1), "ar", "Argentina"),
+                new CountryEntity (Integer.valueOf (2), "ve", "Venezuela"),
+                new CountryEntity (Integer.valueOf (3), "uy", "Uruguay"),
+                new CountryEntity (Integer.valueOf (4), "cl", "Chile"),
+                new CountryEntity (Integer.valueOf (5), "pe", "Peru")
         };
         logger.debug (String.format ("Objects country created %s", Arrays.toString (countries)));
 
@@ -108,18 +108,16 @@ public class CityRepositoryTest {
 
     }
 
-//    @Test
-//    public void testfindAllCitiesByProvinceEntities(){
-//
-//    	ProvinceEntity province = this.repositoryProvince.getOne(6);
-//        List<CityEntity> list =  this.repositoryCity.findAllCitiesByProvinceEntities(province.getId());
-//
-//
-//        Assert.assertFalse(list.isEmpty());
-//
-//
-//    }
-    
-    
-    
+    @Test
+    public void testfindAllCitiesByProvinceEntities(){
+
+    	ProvinceEntity province = this.repositoryProvince.getOne(6);
+        List<CityEntity> list =  this.repositoryCity.findAllCitiesByProvinceEntities(province.getId());
+
+
+        Assert.assertFalse(list.isEmpty());
+
+
+    }
+
 }

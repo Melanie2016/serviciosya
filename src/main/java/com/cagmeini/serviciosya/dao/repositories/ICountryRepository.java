@@ -7,5 +7,5 @@ import com.cagmeini.serviciosya.beans.entity.CountryEntity;
 
 
 @Repository
-public interface ICountryDao extends JpaRepository<CountryEntity, Integer> {
+public interface ICountryRepository extends JpaRepository<CountryEntity, Integer> {
 }

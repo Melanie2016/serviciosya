@@ -10,7 +10,7 @@ import com.cagmeini.serviciosya.beans.entity.ProvinceEntity;
 
 
 @Repository
-public interface IProvinceDao extends JpaRepository<ProvinceEntity, Integer> {
+public interface IProvinceRepository extends JpaRepository<ProvinceEntity, Integer> {
 
 	
     List<ProvinceEntity> findAllByCountryOrderByNameDesc (CountryEntity country);

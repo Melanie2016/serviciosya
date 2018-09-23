@@ -12,7 +12,7 @@ public interface IProviderDao extends JpaRepository<ProviderEntity, Integer> {
 
     ProviderEntity findByEmail (String email);
 
-    ProviderEntity findByDNI (Integer dni);
+    ProviderEntity findByDni (Integer dni);
 
     ProviderEntity findByPhone (String phone);
 }

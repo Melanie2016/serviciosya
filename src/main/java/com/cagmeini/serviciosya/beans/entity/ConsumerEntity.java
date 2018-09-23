@@ -12,7 +12,7 @@ public class ConsumerEntity {
 	@Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@GeneratedValue
-    @Column(name = "id", nullable = false, insertable = false, updatable = false)
+    @Column(name = "consumer_id", nullable = false, insertable = false, updatable = false)
     private int id;
 	
 	@Column(name = "name", length = 48, nullable = false)

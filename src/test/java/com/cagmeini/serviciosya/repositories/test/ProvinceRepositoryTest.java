@@ -1,29 +1,39 @@
 package com.cagmeini.serviciosya.repositories.test;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+
 
 import com.cagmeini.serviciosya.beans.entity.CountryEntity;
 import com.cagmeini.serviciosya.beans.entity.ProvinceEntity;
-import com.cagmeini.serviciosya.dao.repositories.ICountryDao;
-import com.cagmeini.serviciosya.dao.repositories.IProvinceDao;
+import com.cagmeini.serviciosya.dao.repositories.ICountryRepository;
+import com.cagmeini.serviciosya.dao.repositories.IProvinceRepository;
 
 
-
+@RunWith (SpringJUnit4ClassRunner.class)
+@SpringBootTest (webEnvironment = SpringBootTest.WebEnvironment.NONE , classes = JpaConfiguration.class)
+@FixMethodOrder (MethodSorters.NAME_ASCENDING)
 public class ProvinceRepositoryTest {
 
-	@Autowired
-    private ICountryDao   repositoryCountry = null;
 
     @Autowired
-    private IProvinceDao repositoryProvince = null;
+    private ICountryRepository   repositoryCountry = null;
+
+    @Autowired
+    private IProvinceRepository repositoryProvince = null;
 
 
     private final Logger logger = LoggerFactory.getLogger (ProvinceRepositoryTest.class);
@@ -41,8 +51,8 @@ public class ProvinceRepositoryTest {
         logger.info ("Creating countries...");
         CountryEntity[] countries = new CountryEntity [] {
 
-                new CountryEntity (Integer.valueOf (1),"Argentina"),
-                new CountryEntity (Integer.valueOf (2),"Venezuela")
+                new CountryEntity (Integer.valueOf (1), "ar", "Argentina"),
+                new CountryEntity (Integer.valueOf (2), "ve", "Venezuela")
         };
         logger.debug (String.format ("Objects country created %s", Arrays.toString (countries)));
 

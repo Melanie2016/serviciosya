@@ -4,116 +4,101 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 
-
-	@Table (name="city")
-	@Entity (name="City")
-	public class CityEntity {
-
-		@Id
-		@GeneratedValue
-		@Column (name="cit_id")
-	    private Integer id = null;
-
-		@ManyToOne (optional=false)
-		@JoinColumn (name="pro_id", referencedColumnName="pro_id")
-		private ProvinceEntity province = null;
+@Table (name="city")
+@Entity (name="City")
+public class CityEntity { 
+	
+	
+	@Id
+	@GeneratedValue
+	@Column (name="cit_id")
+    private Integer id = null;
+	
+	@ManyToOne (optional=false)
+	@JoinColumn (name="pro_id", referencedColumnName="pro_id")
+	private ProvinceEntity province = null;
+	
+	@Size (max = 100)
+	@Column (name="cit_name", nullable=false, length = 100)
+	private String name = null;
+	
+	
+	public CityEntity () {
 		
-		@Size (max = 100)
-		@Column (name="cit_name", nullable=false, length = 100)
-		private String name = null;
-
-
-
-		// Constructors
-
-		public CityEntity() {
-			super();
-		}
-
-		public CityEntity(int id , ProvinceEntity province, String name) {
-
-			this.id = id;
-			this.province = province;
-			this.name = name;
-			
-		}
-
-		public int getId() {
-			return id;
-		}
-
-		public void setId(int id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public ProvinceEntity getProvince() {
-			return province;
-		}
-
-		public void setProvince(ProvinceEntity province) {
-			this.province = province;
-		}
-
+		super ();
+	}
+	
+	public CityEntity (Integer id, ProvinceEntity province, String name) {
 		
+		super ();
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		@Override
-		public int hashCode() {
-			final int prime = 31;
-			int result = 1;
-			result = prime * result + id;
-			result = prime * result + ((name == null) ? 0 : name.hashCode());
-			result = prime * result + ((province == null) ? 0 : province.hashCode());
-			return result;
-		}
+		this.id       = id;
+		this.province = province;
+		this.name = name;
+	}
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			CityEntity other = (CityEntity) obj;
-			if (id != other.id)
-				return false;
-			if (name == null) {
-				if (other.name != null)
-					return false;
-			} else if (!name.equals(other.name))
-				return false;
-			if (province == null) {
-				if (other.province != null)
-					return false;
-			} else if (!province.equals(other.province))
-				return false;
+	
+	public Integer getId () {
+
+		return this.id;
+	}
+	
+	public void setId (Integer id) {
+		
+		this.id = id;
+	}
+	
+	public ProvinceEntity getProvince () {
+		
+		return this.province;
+	}
+	
+	public void setCountry (ProvinceEntity province) {
+		
+		// Set the value.
+		this.province = province;
+	}
+	
+	public String getName () {
+		
+		return this.name;
+	}
+	
+	public void setName (String name) {
+		
+		this.name = name;
+	}
+	
+	
+	@Override
+	public int hashCode () {
+		
+		int hash = 0;
+        hash += (this.getId () != null ? this.getId ().hashCode () : 0);  
+  
+        return hash;
+	}
+
+	@Override
+	public boolean equals (Object object) {
+		
+		if (this == object)  {
 			return true;
 		}
-
-		@Override
-		public String toString() {
-			return "CityEntity [id=" + id + ", name=" + name + ", province=" + province + "]";
-		}
-
-
-
-
-
-
+              
+        if (object == null) {
+        	return false;
+        }  
+              
+        if (getClass () != object.getClass ()) {
+        	return false;
+        }  
+              
+        CityEntity other = (CityEntity) object;
+        if (!this.id.equals (other.getId ())) {  
+            return false;  
+        }  
+        
+        return true;
 	}
+}

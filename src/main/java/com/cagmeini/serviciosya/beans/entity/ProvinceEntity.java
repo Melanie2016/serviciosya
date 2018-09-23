@@ -2,111 +2,102 @@ package com.cagmeini.serviciosya.beans.entity;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
-@Entity(name= "Province") // si quiero q hibernate reconozca a esta tabla como Country solamente
-@Table(name="province") // para que java me encuentre la tabla por este nombre
+@Table (name="province")
+@Entity (name="Province")
 public class ProvinceEntity {
 
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @GeneratedValue
-    @Column(name="id" , nullable = false,insertable = false,updatable = false)
-    private int id;
+    @Column (name="pro_id")
+    private Integer id = null;
 
-    @Column (name ="name", length = 48,nullable = false)
-    private String name;
+    @ManyToOne (optional=false)
+    @JoinColumn (name="cou_id", referencedColumnName="cou_id")
+    private CountryEntity country = null;
 
-    @ManyToOne
-	@JoinColumn (name="country_id")
-    private CountryEntity country;
-    
-    
-    // Constructors
-    public ProvinceEntity() {
-    	super();
-    	
-    }
-    
-    public ProvinceEntity(int id,String name,CountryEntity country) {
-    	this.id = id;
-    	this.name = name;
-    	this.country = country;
-    	
+    @Size (max = 100)
+    @Column (name="pro_name", nullable=false, length = 100)
+    private String name = null;
+
+
+    public ProvinceEntity () {
+
+        super ();
     }
 
-	
-    
-    // Getters & Setters
+    public ProvinceEntity (Integer id, String name, CountryEntity country) {
 
-    public int getId() {
-		return id;
-	}
+        super ();
 
-	public void setId(int id) {
-		this.id = id;
-	}
+        this.id   = id;
+        this.country = country;
+        this.name = name;
+    }
 
-	public String getName() {
-		return name;
-	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public Integer getId () {
 
-	public CountryEntity getCountry() {
-		return country;
-	}
+        return this.id;
+    }
 
-	public void setCountry(CountryEntity country) {
-		this.country = country;
-	}
+    public void setId (Integer id) {
 
-	
-	
-	
-	
-	
-	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((country == null) ? 0 : country.hashCode());
-		result = prime * result + id;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		return result;
-	}
+        this.id = id;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ProvinceEntity other = (ProvinceEntity) obj;
-		if (country == null) {
-			if (other.country != null)
-				return false;
-		} else if (!country.equals(other.country))
-			return false;
-		if (id != other.id)
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		return true;
-	}
+    public CountryEntity getCountry () {
 
-	@Override
-	public String toString() {
-		return "ProvinceEntity [id=" + id + ", name=" + name + ", country=" + country + "]";
-	}
-	
-	
+        return this.country;
+    }
+
+    public void setCountry (CountryEntity country) {
+
+        this.country = country;
+    }
+
+    public String getName () {
+
+        return this.name;
+    }
+
+    public void setName (String name) {
+
+        this.name = name;
+    }
+
+
+    @Override
+    public int hashCode () {
+
+        int hash = 0;
+        hash += (this.getId () != null ? this.getId ().hashCode () : 0);
+
+        return hash;
+    }
+
+    @Override
+    public boolean equals (Object object) {
+
+        if (this == object)  {
+            return true;
+        }
+
+        if (object == null) {
+            return false;
+        }
+
+        if (getClass () != object.getClass ()) {
+            return false;
+        }
+
+        ProvinceEntity other = (ProvinceEntity) object;
+        if (!this.id.equals (other.getId ())) {
+            return false;
+        }
+
+        return true;
+    }
 }
