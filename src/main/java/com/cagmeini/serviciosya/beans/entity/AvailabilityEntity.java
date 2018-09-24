@@ -54,12 +54,15 @@ public class AvailabilityEntity {
 	
 	
 	
-	public AvailabilityEntity(int id,LocalTime startTime, LocalTime endTime,String day) {
+	public AvailabilityEntity(int id,LocalTime startTime, LocalTime endTime ,String day , Set<OccupationEntity> occu, Set<ProviderEntity> prov) {
 		this.id = id;
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.dayOfAttention = day;
+		this.occupations  = occu;
+		this.providers = prov;
 	}
+
 
 
 
@@ -187,6 +190,18 @@ public class AvailabilityEntity {
 		} else if (!startTime.equals(other.startTime))
 			return false;
 		return true;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "AvailabilityEntity [id=" + id + ", startTime=" + startTime + ", endTime=" + endTime
+				+ ", dayOfAttention=" + dayOfAttention + ", occupations=" + occupations + ", providers=" + providers
+				+ ", getId()=" + getId() + ", getStartTime()=" + getStartTime() + ", getEndTime()=" + getEndTime()
+				+ ", getDayOfAttention()=" + getDayOfAttention() + ", getOccupations()=" + getOccupations()
+				+ ", getProviders()=" + getProviders() + ", hashCode()=" + hashCode() + ", getClass()=" + getClass()
+				+ ", toString()=" + super.toString() + "]";
 	}
 	
 	

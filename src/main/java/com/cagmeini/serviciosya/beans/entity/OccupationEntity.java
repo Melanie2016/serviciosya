@@ -38,14 +38,12 @@ public class OccupationEntity {
     }
 
 
-    public OccupationEntity(int id, String name, String desc) {
+    public OccupationEntity(int id, String name, String desc ,OccupationEntity parent) {
     	this.id = id;
     	this.name = name;
     	this.description = desc;
+    	this.parent = parent;
     }
-
-
-	
 
 
 	public int getId() {
@@ -98,17 +96,6 @@ public class OccupationEntity {
 	}
 
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -159,8 +146,16 @@ public class OccupationEntity {
 
 	@Override
 	public String toString() {
-		return "OccupationEntity{" +
-				"name='" + name + '\'' +
-				'}';
+		return "OccupationEntity [id=" + id + ", name=" + name + ", description=" + description + ", parent=" + parent
+				+ ", availability=" + availability + "]";
 	}
+
+    
+    
+    
+    
+
+	
+
+
 }

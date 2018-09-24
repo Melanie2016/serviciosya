@@ -58,11 +58,11 @@ public class ProviderEntity {
     private String address;
 
     @Range(min = 0, max = 2)
-    @Column(name = "status", nullable = false)
+    @Column(name = "status", nullable = true)
     private Integer status;
 
     @ManyToOne
-    @JoinColumn(name = "city_id")
+    @JoinColumn(name = "city_id",nullable = true)
     private CityEntity city;
 
 
@@ -83,12 +83,16 @@ public class ProviderEntity {
         super();
     }
 
-    public ProviderEntity(int id, String name) {
+    public ProviderEntity(int id, String name,String lastName,String phone,Integer dni,String email,String address) {
 
-        super();
-
+ 
         this.id = id;
         this.name = name;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.dni = dni;
+        this.email = email;
+        this.address = address;
     }
 
 
