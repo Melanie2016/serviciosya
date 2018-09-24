@@ -11,7 +11,7 @@ import com.cagmeini.serviciosya.beans.entity.OccupationEntity;
 
 
 @Repository
-public interface IOccupationDao extends JpaRepository<OccupationEntity, Integer> {
+public interface IOccupationRepository extends JpaRepository<OccupationEntity, Integer> {
 
 
 	

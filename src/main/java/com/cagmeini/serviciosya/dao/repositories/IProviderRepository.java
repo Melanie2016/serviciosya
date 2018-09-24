@@ -7,7 +7,7 @@ import com.cagmeini.serviciosya.beans.entity.ProviderEntity;
 
 
 @Repository
-public interface IProviderDao extends JpaRepository<ProviderEntity, Integer> {
+public interface IProviderRepository extends JpaRepository<ProviderEntity, Integer> {
 
 
     ProviderEntity findByEmail (String email);

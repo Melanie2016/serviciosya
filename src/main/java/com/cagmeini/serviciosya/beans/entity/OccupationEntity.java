@@ -20,12 +20,12 @@ public class OccupationEntity {
     @Column (name ="description", length = 48,nullable = false)
     private String description;
 
-//  @ManyToOne
-//	@JoinColumn (name = "parent",nullable = true)
-//	private OccupationEntity parent;
+    @ManyToOne
+	@JoinColumn (name = "parent",nullable = true)
+	private OccupationEntity parent;
 
-	@ManyToMany (mappedBy="occupations")
-	private Set<ProviderEntity> providers = new HashSet<>();
+//	@ManyToMany (mappedBy="occupations")
+//	private Set<ProviderEntity> providers = new HashSet<>();
 	
 	@ManyToMany (mappedBy="occupations") // es el nombre del atributo en la clase que mapea
 	private Set<AvailabilityEntity> availability = new HashSet<>();
@@ -43,6 +43,9 @@ public class OccupationEntity {
     	this.name = name;
     	this.description = desc;
     }
+
+
+	
 
 
 	public int getId() {
@@ -75,20 +78,83 @@ public class OccupationEntity {
 	}
 
 
-
-
-	public Set<ProviderEntity> getProviders() {
-
-		return providers;
+	public OccupationEntity getParent() {
+		return parent;
 	}
 
-	public void setProviders(Set<ProviderEntity> providers) {
 
-		this.providers = providers;
+	public void setParent(OccupationEntity parent) {
+		this.parent = parent;
 	}
+
+
+	public Set<AvailabilityEntity> getAvailability() {
+		return availability;
+	}
+
+
+	public void setAvailability(Set<AvailabilityEntity> availability) {
+		this.availability = availability;
+	}
+
 
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((availability == null) ? 0 : availability.hashCode());
+		result = prime * result + ((description == null) ? 0 : description.hashCode());
+		result = prime * result + id;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((parent == null) ? 0 : parent.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		OccupationEntity other = (OccupationEntity) obj;
+		if (availability == null) {
+			if (other.availability != null)
+				return false;
+		} else if (!availability.equals(other.availability))
+			return false;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
+		if (id != other.id)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (parent == null) {
+			if (other.parent != null)
+				return false;
+		} else if (!parent.equals(other.parent))
+			return false;
+		return true;
+	}
 
 
 	@Override
