@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.cagmeini.serviciosya.dao.repositories.ICityRepository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
@@ -34,7 +35,8 @@ import com.cagmeini.serviciosya.dao.repositories.IProviderRepository;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AvailabilityRepositoryTest {
 	
-	
+	private ICityRepository repositoryCity = null;
+
 	private IAvailabilityRepository repositoryA = null;
 	
 	private IOccupationRepository repositoryOcc = null;
@@ -48,30 +50,50 @@ public class AvailabilityRepositoryTest {
 	@Before
     public void setup () {
 
+        // ------------------ GUARDANDO CIUDADES ----------------------
+
+
+        logger.info ("Creating citys...");
+        CityEntity[] cityList = new CityEntity [] {
+
+                new CityEntity (Integer.valueOf (1),null,"Caballito"),
+                new CityEntity (Integer.valueOf (2),null,"San Justo"),
+                new CityEntity (Integer.valueOf (3),null,"Moron"),
+                new CityEntity (Integer.valueOf (4),null,"Castelar"),
+                new CityEntity (Integer.valueOf (5),null,"Ituzaingo"),
+        };
+        logger.debug (String.format ("Objects city created %s", Arrays.toString (cityList)));
+
+        logger.debug ("Saving city...");
+        this.repositoryCity.save (Arrays.asList (cityList));
+        logger.debug (String.format ("City saved %s", Arrays.toString (cityList)));
+
+
+        Set<CityEntity> citySet = new HashSet<CityEntity>(Arrays.asList(cityList));
 		
         // ------------------- GUARDANDO PROVEEDORES -------------------
         logger.info ("Creating providers...");
         ProviderEntity[] providers = new ProviderEntity [] {
 
-                new ProviderEntity(Integer.valueOf (1),"Zoe"	,"Gomez","1111111",1111111,"zoe.lala@lala.com","jaja 123"),
-                new ProviderEntity(Integer.valueOf (2),"Isabel"	,"Lopez","2222222",2222222,"isa.lala@lala.com","jaja 123"),
-                new ProviderEntity(Integer.valueOf (3),"Paola"	,"Mende","1231556",12345678,"pao.lala@lala.com","jaja 123"),
+                new ProviderEntity(Integer.valueOf (6),"Zoe"	,"Gomez","1111111",1111111,"zoe.lala@lala.com","jaja 123",this.repositoryCity.getOne(1)),
+                new ProviderEntity(Integer.valueOf (7),"Isabel"	,"Lopez","2222222",2222222,"isa.lala@lala.com","jaja 123",this.repositoryCity.getOne(3)),
+                new ProviderEntity(Integer.valueOf (8),"Paola"	,"Mende","1231556",12345678,"pao.lala@lala.com","jaja 123",this.repositoryCity.getOne(2)),
         };
         logger.debug (String.format ("Objects providers created %s", Arrays.toString (providers)));
 
         logger.info ("Saving providers !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!...");
         this.repositoryP.save(Arrays.asList(providers));
 
-        
-        
+
+
 
 		// ------------------ GUARDANDO OCCUPACIONES ----------------------
         logger.info ("Creating occupations...");
         OccupationEntity[] occupations = new OccupationEntity [] {
 
-                new OccupationEntity (Integer.valueOf (4),"Developer"	,"Ninja code"	,null),
-                new OccupationEntity (Integer.valueOf (5),"Comediante"	,"Hacer reir"	,null),
-                new OccupationEntity (Integer.valueOf (6),"Cantante"	,"Cantar"		,null),
+                new OccupationEntity (Integer.valueOf (9),"Developer"	,"Ninja code"	,null),
+                new OccupationEntity (Integer.valueOf (10),"Comediante"	,"Hacer reir"	,null),
+                new OccupationEntity (Integer.valueOf (11),"Cantante"	,"Cantar"		,null),
                
         };
         
@@ -94,9 +116,9 @@ public class AvailabilityRepositoryTest {
         logger.info ("Creating availabilities...");
         AvailabilityEntity[] availabilities = new AvailabilityEntity [] {
 
-                new AvailabilityEntity(Integer.valueOf (7),LocalTime.parse("08:30"),LocalTime.parse("13:30"),"Lunes"		,occupationSet,providerSet	),
-                new AvailabilityEntity(Integer.valueOf (8),LocalTime.parse("11:30"),LocalTime.parse("16:30"),"Martes"		,occupationSet,providerSet	),
-                new AvailabilityEntity(Integer.valueOf (9),LocalTime.parse("08:30"),LocalTime.parse("13:30"),"Miercoles"	,occupationSet,providerSet	)
+                new AvailabilityEntity(Integer.valueOf (12),LocalTime.parse("08:30"),LocalTime.parse("13:30"),"Lunes"		,occupationSet,providerSet	),
+                new AvailabilityEntity(Integer.valueOf (13),LocalTime.parse("11:30"),LocalTime.parse("16:30"),"Martes"		,occupationSet,providerSet	),
+                new AvailabilityEntity(Integer.valueOf (14),LocalTime.parse("08:30"),LocalTime.parse("13:30"),"Miercoles"	,occupationSet,providerSet	)
          
         };
         

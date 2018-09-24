@@ -83,7 +83,7 @@ public class ProviderEntity {
         super();
     }
 
-    public ProviderEntity(int id, String name,String lastName,String phone,Integer dni,String email,String address) {
+    public ProviderEntity(int id, String name,String lastName,String phone,Integer dni,String email,String address ,CityEntity city) {
 
  
         this.id = id;
@@ -93,6 +93,7 @@ public class ProviderEntity {
         this.dni = dni;
         this.email = email;
         this.address = address;
+        this.city = city;
     }
 
 

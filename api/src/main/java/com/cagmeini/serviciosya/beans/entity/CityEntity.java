@@ -15,7 +15,7 @@ public class CityEntity {
     private Integer id = null;
 	
 	@ManyToOne (optional=false)
-	@JoinColumn (name="pro_id", referencedColumnName="pro_id")
+	@JoinColumn (name="pro_id", referencedColumnName="pro_id",nullable=false)
 	private ProvinceEntity province = null;
 	
 	@Size (max = 100)

@@ -10,6 +10,9 @@ import com.cagmeini.serviciosya.beans.entity.ProviderEntity;
 public interface IProviderRepository extends JpaRepository<ProviderEntity, Integer> {
 
 
+
+
+
 //    ProviderEntity findByEmail (String email);
 //
 //    ProviderEntity findByDni (Integer dni);
