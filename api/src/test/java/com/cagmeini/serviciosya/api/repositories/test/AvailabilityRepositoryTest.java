@@ -1,4 +1,4 @@
-package com.cagmeini.serviciosya.repositories.test;
+package com.cagmeini.serviciosya.api.repositories.test;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -7,7 +7,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.cagmeini.serviciosya.dao.repositories.ICityRepository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
@@ -19,15 +18,16 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.cagmeini.serviciosya.beans.entity.AvailabilityEntity;
-import com.cagmeini.serviciosya.beans.entity.CityEntity;
-import com.cagmeini.serviciosya.beans.entity.CountryEntity;
-import com.cagmeini.serviciosya.beans.entity.OccupationEntity;
-import com.cagmeini.serviciosya.beans.entity.ProviderEntity;
-import com.cagmeini.serviciosya.beans.entity.ProvinceEntity;
-import com.cagmeini.serviciosya.dao.repositories.IAvailabilityRepository;
-import com.cagmeini.serviciosya.dao.repositories.IOccupationRepository;
-import com.cagmeini.serviciosya.dao.repositories.IProviderRepository;
+import com.cagmeini.serviciosya.api.beans.entity.AvailabilityEntity;
+import com.cagmeini.serviciosya.api.beans.entity.CityEntity;
+import com.cagmeini.serviciosya.api.beans.entity.CountryEntity;
+import com.cagmeini.serviciosya.api.beans.entity.OccupationEntity;
+import com.cagmeini.serviciosya.api.beans.entity.ProviderEntity;
+import com.cagmeini.serviciosya.api.beans.entity.ProvinceEntity;
+import com.cagmeini.serviciosya.api.dao.repositories.IAvailabilityRepository;
+import com.cagmeini.serviciosya.api.dao.repositories.ICityRepository;
+import com.cagmeini.serviciosya.api.dao.repositories.IOccupationRepository;
+import com.cagmeini.serviciosya.api.dao.repositories.IProviderRepository;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)

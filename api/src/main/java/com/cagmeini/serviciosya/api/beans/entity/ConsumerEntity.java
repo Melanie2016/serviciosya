@@ -1,4 +1,4 @@
-package com.cagmeini.serviciosya.beans.entity;
+package com.cagmeini.serviciosya.api.beans.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;

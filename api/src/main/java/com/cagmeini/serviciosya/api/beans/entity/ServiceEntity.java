@@ -1,4 +1,4 @@
-package com.cagmeini.serviciosya.beans.entity;
+package com.cagmeini.serviciosya.api.beans.entity;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

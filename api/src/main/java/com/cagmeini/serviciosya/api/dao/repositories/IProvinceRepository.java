@@ -1,12 +1,12 @@
-package com.cagmeini.serviciosya.dao.repositories;
+package com.cagmeini.serviciosya.api.dao.repositories;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.cagmeini.serviciosya.beans.entity.CountryEntity;
-import com.cagmeini.serviciosya.beans.entity.ProvinceEntity;
+import com.cagmeini.serviciosya.api.beans.entity.CountryEntity;
+import com.cagmeini.serviciosya.api.beans.entity.ProvinceEntity;
 
 
 @Repository

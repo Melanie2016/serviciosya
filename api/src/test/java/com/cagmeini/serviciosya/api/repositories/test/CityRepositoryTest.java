@@ -1,4 +1,4 @@
-package com.cagmeini.serviciosya.repositories.test;
+package com.cagmeini.serviciosya.api.repositories.test;
 
 import java.util.Arrays;
 
@@ -14,12 +14,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.cagmeini.serviciosya.beans.entity.CityEntity;
-import com.cagmeini.serviciosya.beans.entity.CountryEntity;
-import com.cagmeini.serviciosya.beans.entity.ProvinceEntity;
-import com.cagmeini.serviciosya.dao.repositories.ICityRepository;
-import com.cagmeini.serviciosya.dao.repositories.ICountryRepository;
-import com.cagmeini.serviciosya.dao.repositories.IProvinceRepository;
+import com.cagmeini.serviciosya.api.beans.entity.CityEntity;
+import com.cagmeini.serviciosya.api.beans.entity.CountryEntity;
+import com.cagmeini.serviciosya.api.beans.entity.ProvinceEntity;
+import com.cagmeini.serviciosya.api.dao.repositories.ICityRepository;
+import com.cagmeini.serviciosya.api.dao.repositories.ICountryRepository;
+import com.cagmeini.serviciosya.api.dao.repositories.IProvinceRepository;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)

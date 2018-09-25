@@ -1,4 +1,4 @@
-package com.cagmeini.serviciosya.repositories.test;
+package com.cagmeini.serviciosya.api.repositories.test;
 
 import java.util.Properties;
 

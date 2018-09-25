@@ -1,4 +1,4 @@
-package com.cagmeini.serviciosya.dao.repositories;
+package com.cagmeini.serviciosya.api.dao.repositories;
 
 import java.util.List;
 
