@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
 @Configuration
-@EnableJpaRepositories (basePackages = {"com.cagmeini.serviciosya.dao.repositories"})
+@EnableJpaRepositories (basePackages = {"com.cagmeini.serviciosya.api.dao.repositories"})
 @EnableTransactionManagement
 public class JpaConfiguration {
 	
