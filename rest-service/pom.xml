@@ -16,12 +16,15 @@
     <packaging>jar</packaging>
     <description>API Rest Servicios Ya.</description>
 
-    <!--
+    <!-- http://javaparainocentesalmas.blogspot.com/2017/07/spring-boot-iniciar-tomcat-y-un-servicio.html
       - Properties declarations.
       -->
     <properties>
-        <jdk.version>1.8</jdk.version>
-        <spring.version>4.3.5.RELEASE</spring.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!-- Spring boot main class -->
+        <start-class>com.capgemini.serviciosya.rest.application</start-class>
     </properties>
 
     <!--
@@ -168,24 +171,21 @@
 
     </dependencies>
 
-    <!-- https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html
+    <!--
        - Build setup.
        -->
     <build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>2.0.5.RELEASE</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+        <finalName>serviciosya</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
