@@ -12,7 +12,8 @@ public class ConsumerEntity {
 	@Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@GeneratedValue
-    @Column(name = "consumer_id", nullable = false, insertable = false, updatable = false)
+	@Basic (optional=false)
+    @Column(name = "consumer_id")
     private int id;
 	
 	@Column(name = "name", length = 48, nullable = false)
@@ -46,7 +47,7 @@ public class ConsumerEntity {
     	
     }
     
-    public ConsumerEntity(int id,String name, String lastName, String phone, Integer dni, String email, String address) {
+    public ConsumerEntity(int id,String name, String lastName, String phone, Integer dni, String email, String address, CityEntity city) {
     	
     	this.id = id;
     	this.name = name;

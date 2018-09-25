@@ -3,8 +3,10 @@ package com.cagmeini.serviciosya.beans.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -72,7 +74,11 @@ public class ProviderEntity {
 //            inverseJoinColumns = {@JoinColumn(name = "occupation_id")})
 //    private Set<OccupationEntity> occupations = new HashSet<>();
 
-    @ManyToMany(mappedBy="providers")   
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+                },mappedBy="providers")   
     private Set<AvailabilityEntity> availabilitys = new HashSet<>();
 
     
@@ -83,7 +89,15 @@ public class ProviderEntity {
         super();
     }
 
-    public ProviderEntity(int id, String name,String lastName,String phone,Integer dni,String email,String address) {
+    public ProviderEntity(	int id, 
+    						String name,
+    						String lastName,
+    						String phone,
+    						Integer dni,
+    						String email,
+    						String address, 
+    						CityEntity city
+    						) {
 
  
         this.id = id;
@@ -93,6 +107,7 @@ public class ProviderEntity {
         this.dni = dni;
         this.email = email;
         this.address = address;
+        this.city = city;
     }
 
 
@@ -175,18 +190,17 @@ public class ProviderEntity {
         this.city = city;
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+	public Set<AvailabilityEntity> getAvailabilitys() {
+		return availabilitys;
+	}
 
+	public void setAvailabilitys(Set<AvailabilityEntity> availabilitys) {
+		this.availabilitys = availabilitys;
+	}
+
+	
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
