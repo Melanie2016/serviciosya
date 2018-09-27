@@ -5,8 +5,8 @@ import java.time.LocalTime;
 
 import javax.persistence.*;
 
-@Entity(name = "Service")
-@Table(name = "service" )
+//@Entity(name = "Service")
+//@Table(name = "service" )
 public class ServiceEntity {
 
 	@Id
@@ -25,10 +25,10 @@ public class ServiceEntity {
 	// es ManyToOne porque considero a la clase servicio como el registro de 
 	// servicios contratados un consumidor puede contratar varios servicios 
 	// pero un proveedor no puede hacer dos services el mismo dia y horario o no deberia 
-	@ManyToOne 
-	@JoinColumn(name="consumer_id")
-	private ConsumerEntity consumers ;
-	
+//	@ManyToOne 
+//	@JoinColumn(name="consumer_id")
+//	private ConsumerEntity consumers ;
+//	
 	
 	public ServiceEntity() {
 		
@@ -64,54 +64,12 @@ public class ServiceEntity {
 		this.time = time;
 	}
 
-	public ConsumerEntity getConsumers() {
-		return consumers;
-	}
+//	public ConsumerEntity getConsumers() {
+//		return consumers;
+//	}
+//
+//	public void setConsumers(ConsumerEntity consumers) {
+//		this.consumers = consumers;
+//	}
 
-	public void setConsumers(ConsumerEntity consumers) {
-		this.consumers = consumers;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((consumers == null) ? 0 : consumers.hashCode());
-		result = prime * result + ((date == null) ? 0 : date.hashCode());
-		result = prime * result + id;
-		result = prime * result + ((time == null) ? 0 : time.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ServiceEntity other = (ServiceEntity) obj;
-		if (consumers == null) {
-			if (other.consumers != null)
-				return false;
-		} else if (!consumers.equals(other.consumers))
-			return false;
-		if (date == null) {
-			if (other.date != null)
-				return false;
-		} else if (!date.equals(other.date))
-			return false;
-		if (id != other.id)
-			return false;
-		if (time == null) {
-			if (other.time != null)
-				return false;
-		} else if (!time.equals(other.time))
-			return false;
-		return true;
-	}
-	
-	
-	
 }

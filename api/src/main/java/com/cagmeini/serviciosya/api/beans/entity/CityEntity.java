@@ -14,9 +14,9 @@ public class CityEntity {
 	@Column (name="cit_id")
     private Integer id = null;
 	
-	@ManyToOne (optional=false)
-	@JoinColumn (name="pro_id", referencedColumnName="pro_id",nullable=false)
-	private ProvinceEntity province = null;
+//	@ManyToOne (optional=false)
+//	@JoinColumn (name="pro_id", referencedColumnName="pro_id",nullable=false)
+//	private ProvinceEntity province = null;
 	
 	@Size (max = 100)
 	@Column (name="cit_name", nullable=false, length = 100)
@@ -28,12 +28,12 @@ public class CityEntity {
 		super ();
 	}
 	
-	public CityEntity (Integer id, ProvinceEntity province, String name) {
+	public CityEntity (Integer id, String name) {
 		
 		super ();
 		
 		this.id       = id;
-		this.province = province;
+	
 		this.name = name;
 	}
 
@@ -48,16 +48,7 @@ public class CityEntity {
 		this.id = id;
 	}
 	
-	public ProvinceEntity getProvince () {
-		
-		return this.province;
-	}
 	
-	public void setCountry (ProvinceEntity province) {
-		
-		// Set the value.
-		this.province = province;
-	}
 	
 	public String getName () {
 		
@@ -70,35 +61,4 @@ public class CityEntity {
 	}
 	
 	
-	@Override
-	public int hashCode () {
-		
-		int hash = 0;
-        hash += (this.getId () != null ? this.getId ().hashCode () : 0);  
-  
-        return hash;
-	}
-
-	@Override
-	public boolean equals (Object object) {
-		
-		if (this == object)  {
-			return true;
-		}
-              
-        if (object == null) {
-        	return false;
-        }  
-              
-        if (getClass () != object.getClass ()) {
-        	return false;
-        }  
-              
-        CityEntity other = (CityEntity) object;
-        if (!this.id.equals (other.getId ())) {  
-            return false;  
-        }  
-        
-        return true;
-	}
 }

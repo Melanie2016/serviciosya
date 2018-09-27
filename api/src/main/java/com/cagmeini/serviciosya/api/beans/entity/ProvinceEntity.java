@@ -3,9 +3,9 @@ package com.cagmeini.serviciosya.api.beans.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
-
-@Table (name="province")
-@Entity (name="Province")
+//
+//@Table (name="province")
+//@Entity (name="Province")
 public class ProvinceEntity {
 
 
@@ -14,9 +14,9 @@ public class ProvinceEntity {
     @Column (name="pro_id")
     private Integer id = null;
 
-    @ManyToOne (optional=false)
-    @JoinColumn (name="cou_id", referencedColumnName="cou_id")
-    private CountryEntity country = null;
+//    @ManyToOne (optional=false)
+//    @JoinColumn (name="cou_id", referencedColumnName="cou_id")
+//    private CountryEntity country = null;
 
     @Size (max = 100)
     @Column (name="pro_name", nullable=false, length = 100)
@@ -28,12 +28,12 @@ public class ProvinceEntity {
         super ();
     }
 
-    public ProvinceEntity (Integer id, String name, CountryEntity country) {
+    public ProvinceEntity (Integer id, String name) {
 
         super ();
 
         this.id   = id;
-        this.country = country;
+   
         this.name = name;
     }
 
@@ -48,16 +48,6 @@ public class ProvinceEntity {
         this.id = id;
     }
 
-    public CountryEntity getCountry () {
-
-        return this.country;
-    }
-
-    public void setCountry (CountryEntity country) {
-
-        this.country = country;
-    }
-
     public String getName () {
 
         return this.name;
@@ -69,35 +59,5 @@ public class ProvinceEntity {
     }
 
 
-    @Override
-    public int hashCode () {
-
-        int hash = 0;
-        hash += (this.getId () != null ? this.getId ().hashCode () : 0);
-
-        return hash;
-    }
-
-    @Override
-    public boolean equals (Object object) {
-
-        if (this == object)  {
-            return true;
-        }
-
-        if (object == null) {
-            return false;
-        }
-
-        if (getClass () != object.getClass ()) {
-            return false;
-        }
-
-        ProvinceEntity other = (ProvinceEntity) object;
-        if (!this.id.equals (other.getId ())) {
-            return false;
-        }
-
-        return true;
-    }
+    
 }

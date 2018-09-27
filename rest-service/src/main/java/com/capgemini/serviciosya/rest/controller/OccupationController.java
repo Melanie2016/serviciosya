@@ -17,14 +17,9 @@ public class OccupationController {
 		
 	}
 	
-	@Autowired
-	public void setProductRepository (IOccupationRepository occupationRepository) {
-		
-		this.occupationRepository = occupationRepository;
-	}
 	
 	@RequestMapping (method = RequestMethod.GET, produces={MediaType.APPLICATION_JSON_VALUE})
-	public ResponseEntity<?> get () {
+    public ResponseEntity<?> get () {
 
     	// Return the value.
     	return ResponseEntity.ok (this.occupationRepository.findAll ());
