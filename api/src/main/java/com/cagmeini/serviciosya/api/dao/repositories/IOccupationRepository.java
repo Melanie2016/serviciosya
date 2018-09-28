@@ -19,17 +19,5 @@ public interface IOccupationRepository extends JpaRepository<OccupationEntity, I
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }
