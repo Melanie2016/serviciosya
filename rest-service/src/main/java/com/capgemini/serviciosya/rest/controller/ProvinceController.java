@@ -1,4 +1,4 @@
-package com.capgemini.serviciosya.rest.controller;
+package main.java.com.capgemini.serviciosya.rest.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

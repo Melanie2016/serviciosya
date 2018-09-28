@@ -1,0 +1,54 @@
+--------------------------------CITY---------------------------------------
+
+CREATE TABLE public.city
+(
+    id integer NOT NULL,
+    name character varying(48) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT city_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+--------------------------------COUNTRY------------------------------------
+CREATE TABLE public.country
+(
+    id integer NOT NULL,
+    name character varying(48) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT country_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+--------------------------OCCUPATION---------------------------------------
+CREATE TABLE public.occupation
+(
+    occupation_id integer NOT NULL,
+    name character varying(48) COLLATE pg_catalog."default" NOT NULL,
+    description character varying(48) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT occupation_idkey PRIMARY KEY (occupation_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+--------------------------------PROVINCE----------------------------------
+
+CREATE TABLE public.province
+(
+    pro_id integer NOT NULL,
+    name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT province_pkey PRIMARY KEY (pro_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;

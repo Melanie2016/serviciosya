@@ -1,4 +1,4 @@
-package com.capgemini.serviciosya.rest.configuration;
+package main.java.com.capgemini.serviciosya.rest.configuration;
 
 import java.beans.PropertyVetoException;
 import java.util.Properties;

@@ -1,4 +1,4 @@
-package com.capgemini.serviciosya.rest.application;
+package main.java.com.capgemini.serviciosya.rest.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

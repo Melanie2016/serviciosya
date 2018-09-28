@@ -1,4 +1,4 @@
-package com.capgemini.serviciosya.rest.configuration;
+package main.java.com.capgemini.serviciosya.rest.configuration;
 
 import java.io.IOException;
 import javax.servlet.Filter;
