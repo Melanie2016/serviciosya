@@ -10,7 +10,7 @@ public class Client {
     public static void main(String[] args) throws Exception {
 
         final QName serviceName = new QName("com.capgemini.serviciosya.soap.webservice", "CalculatorService");
-        final URL wsdlURL = new URL("http://localhost:8090/serviciosya/CalculatorService/CalculatorBean?wsdl");
+        final URL wsdlURL = new URL("http://localhost:8080/serviciosya/CalculatorService/CalculatorBean?wsdl");
 
         final Service service = Service.create(wsdlURL, serviceName);
         final Calculator calculator = (Calculator) service
