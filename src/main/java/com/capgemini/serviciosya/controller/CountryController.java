@@ -27,7 +27,7 @@ public class CountryController {
 	
 	
 	
-	@RequestMapping(path="/hola")
+	@RequestMapping(path="/countries")
 	public ModelAndView hola() {
 		
 		ModelMap model = new ModelMap();
@@ -39,7 +39,7 @@ public class CountryController {
 		
 		
 		
-		return new ModelAndView ("hola",model);
+		return new ModelAndView ("countries",model);
 	}
 	
 	
