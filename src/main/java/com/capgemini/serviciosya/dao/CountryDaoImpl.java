@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
+import com.capgemini.serviciosya.model.City;
 import com.capgemini.serviciosya.model.Country;
 import com.capgemini.serviciosya.model.Province;
 
@@ -50,6 +51,26 @@ public class CountryDaoImpl implements ICountryDao {
 	}
 	
 	
+	
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<City> consultCitiesByProvince(int idProvince) {
+		
+		final Session session = sessionFactory.getCurrentSession();
+		
+		return session.createCriteria(City.class,"classGral")
+				.createAlias("classGral.province", "province")
+				.add(Restrictions.eq("province.id", idProvince))
+				.list();
+		
+	}
+
+	
+	
+	
+	
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Country> consultCountries() {
@@ -74,6 +95,8 @@ public class CountryDaoImpl implements ICountryDao {
 		session.save(country);
 		
 	}
+
+
 
 
 

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.capgemini.serviciosya.dao.ICountryDao;
+import com.capgemini.serviciosya.model.City;
 import com.capgemini.serviciosya.model.Country;
 import com.capgemini.serviciosya.model.Province;
 
@@ -20,6 +21,14 @@ public class CountryServiceImpl implements ICountryService{
 	@Inject
 	private ICountryDao countryDao;
 
+	
+	
+	@Override
+	public List<Country> listCountries() {
+		
+		return countryDao.consultCountries();
+	}
+	
 	
 	@Override
 	public List<Country> listCountriesByName(String name) {
@@ -34,11 +43,16 @@ public class CountryServiceImpl implements ICountryService{
 		return countryDao.consultProvincesByCountryName(name);
 	}
 	
+	
 	@Override
-	public List<Country> listCountries() {
+	public List<City> consultCitiesByProvince(int idProvince) {
 		
-		return countryDao.consultCountries();
+		return countryDao.consultCitiesByProvince(idProvince);
 	}
+
+	
+	
+	
 
 
 
@@ -49,6 +63,8 @@ public class CountryServiceImpl implements ICountryService{
 		
 	}
 
+
+	
 	
 
 

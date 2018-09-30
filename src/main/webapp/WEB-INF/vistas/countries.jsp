@@ -68,7 +68,7 @@
 				    
 				    
 				    <!-- Name -->
-				    <form:input path="name" id="name" type="text" class="form-control mb-4" placeholder="Name" /><br> 
+				    <form:input path="name" id="name" type="text" class="form-control mb-4" placeholder="Ingrese el nombre del país a registrar" /><br> 
 				    
 				    
 				    
@@ -91,18 +91,7 @@
 				
 				   
 				
-				    <a type="button" class="light-blue-text mx-2">
-				        <i class="fa fa-facebook"></i>
-				    </a>
-				    <a type="button" class="light-blue-text mx-2">
-				        <i class="fa fa-twitter"></i>
-				    </a>
-				    <a type="button" class="light-blue-text mx-2">
-				        <i class="fa fa-linkedin"></i>
-				    </a>
-				    <a type="button" class="light-blue-text mx-2">
-				        <i class="fa fa-github"></i>
-				    </a>
+				   
 				
 				</form:form>
 				
@@ -165,7 +154,7 @@
 		
 				
 				
-			<br><br>	
+		
 	
 	
 	</body>

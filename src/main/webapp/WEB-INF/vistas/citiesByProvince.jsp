@@ -64,14 +64,14 @@
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <c:forEach items="${provinces}" var="provinces">
+			    <c:forEach items="${cities}" var="cities">
 						
 							<tr>
 
 								<th scope="row"></th>
-									<td>${provinces.id}</td>
- 									<td>${provinces.name}</td> 
-									<td><a href="../province/${provinces.id}" class="btn btn-info " role="button" >Seleccionar</a></td>
+									<td>${cities.id}</td>
+ 									<td>${cities.name}</td> 
+<%-- 									<td><a href="../province/${provinces.id}" class="btn btn-info " role="button" >Seleccionar</a></td> --%>
 
 							</tr> 
 				</c:forEach>
@@ -147,4 +147,5 @@
 	
 	
 	</body>
+</html>
 </html>

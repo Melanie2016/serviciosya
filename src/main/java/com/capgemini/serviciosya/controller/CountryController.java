@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.capgemini.serviciosya.model.City;
 import com.capgemini.serviciosya.model.Country;
 import com.capgemini.serviciosya.model.Province;
 import com.capgemini.serviciosya.service.ICountryService;
@@ -32,7 +33,7 @@ public class CountryController {
 	
 	
 	@RequestMapping(path="country/name/{name}")
-	public ModelAndView countries(@PathVariable String name) {
+	public ModelAndView provinces(@PathVariable String name) {
 		
 		// pasar a mayuscula los nombres 
 		ModelMap model = new ModelMap();
@@ -45,6 +46,24 @@ public class CountryController {
 		
 		return new ModelAndView ("provincesByCountryName",model);
 	}
+	
+	
+	@RequestMapping(path="country/province/{idProvince}")
+	public ModelAndView cities(@PathVariable int idProvince) {
+		
+		// pasar a mayuscula los nombres 
+		ModelMap model = new ModelMap();
+		
+//		String names = name.toUpperCase();
+		
+		List<City> list = countryService.consultCitiesByProvince(idProvince);
+		
+		model.put("cities", list);		
+		
+		return new ModelAndView ("citiesByProvince",model);
+	}
+	
+	
 	
 	
 	@RequestMapping(path="/addCountry", method = RequestMethod.GET)
