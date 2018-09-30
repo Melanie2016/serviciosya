@@ -10,19 +10,8 @@
 	    <meta name="description" content="">
 	    <meta name="author" content="">
 	
-	    <title>REGISTRAR</title>
-	
-	    <!-- Bootstrap core CSS -->
-	    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	
-	    <!-- Custom fonts for this template -->
-	    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-	    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-	    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-	
-	    <!-- Custom styles for this template -->
-	    <link href="css/landing-page.min.css" rel="stylesheet">
-	   	
+	    <title>PAISES</title>
+		
 	   	
 	   	<!-- para arreglar  -->
 	   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -55,61 +44,48 @@
 		    </ul>
 		  </div>
 		</nav>
+		
+		
+		
 		<div class="container">
 		
+		<br><br>
+		<p class="h4 mb-4">Provincias</p>
 		
-			<!-- Default form login -->
-				<form:form action="addCountry"  method="POST" modelAttribute="countries" class="text-center border border-light p-5" >
-				
-				    <p class="h4 mb-4">Nuevo Pa&iacute;s</p>
-				
-				    <!-- Id -->			
-					<form:input path="id" id="id" type="hidden"  class="form-control mb-4" placeholder="" /><br> 
-				    
-				    
-				    <!-- Name -->
-				    <form:input path="name" id="name" type="text" class="form-control mb-4" placeholder="Name" /><br> 
-				    
-				    
-				    
-<!-- 				    <div class="d-flex justify-content-around"> -->
-<!-- 				        <div> -->
-<!-- 				            Remember me -->
-<!-- 				            <div class="custom-control custom-checkbox"> -->
-<!-- 				                <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember"> -->
-<!-- 				                <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label> -->
-<!-- 				            </div> -->
-<!-- 				        </div> -->
-<!-- 				        <div> -->
-<!-- 				            Forgot password -->
-<!-- 				            <a href="">Forgot password?</a> -->
-<!-- 				        </div> -->
-<!-- 				    </div> -->
-				
-				    <!-- Sign in button -->
-				    <button class="btn btn-info btn-block my-4" type="submit">Agregar</button>
-				
-				   
-				
-				    <a type="button" class="light-blue-text mx-2">
-				        <i class="fa fa-facebook"></i>
-				    </a>
-				    <a type="button" class="light-blue-text mx-2">
-				        <i class="fa fa-twitter"></i>
-				    </a>
-				    <a type="button" class="light-blue-text mx-2">
-				        <i class="fa fa-linkedin"></i>
-				    </a>
-				    <a type="button" class="light-blue-text mx-2">
-				        <i class="fa fa-github"></i>
-				    </a>
-				
-				</form:form>
-				
-	
-				
-				
+			
+			<table class="table table-hover" >
+			  <thead style="background-color: #18a2b8; color:white;">
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Id</th>
+			      <th scope="col">Name</th>
+
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <c:forEach items="${provinces}" var="provinces">
+						
+							<tr>
+
+								<th scope="row"></th>
+									<td>${provinces.id}</td>
+ 									<td>${provinces.name}</td> 
+								
+
+							</tr> 
+				</c:forEach>
+			    
+			    
+			  </tbody>
+			</table>
+			
+			
+			<br><br>
 		</div>
+		
+		
+		
+		
 		<!-- Footer -->
 	    <footer class="footer bg-light">
 	    	<br><br><br><br>
@@ -155,6 +131,7 @@
 	            </ul>
 	          </div>
 	        </div>
+	        <br><br>	
 	      </div>
 	    </footer>
 	
@@ -165,7 +142,7 @@
 		
 				
 				
-			<br><br>	
+			
 	
 	
 	</body>

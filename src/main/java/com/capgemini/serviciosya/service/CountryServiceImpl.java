@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.capgemini.serviciosya.dao.ICountryDao;
 import com.capgemini.serviciosya.model.Country;
+import com.capgemini.serviciosya.model.Province;
 
 @Service ("countryService")
 @Transactional
@@ -20,13 +21,40 @@ public class CountryServiceImpl implements ICountryService{
 	private ICountryDao countryDao;
 
 	
+	@Override
+	public List<Country> listCountriesByName(String name) {
+		
+		return countryDao.consultCountriesByName(name);
+	}
 	
 	
 	@Override
-	public List<Country> listarPaises() {
-		// TODO Auto-generated method stub
-		return countryDao.consultarPaises();
+	public List<Province> consultProvincesByCountryName(String name) {
+		
+		return countryDao.consultProvincesByCountryName(name);
 	}
+	
+	@Override
+	public List<Country> listCountries() {
+		
+		return countryDao.consultCountries();
+	}
+
+
+
+
+	@Override
+	public void addCountry(Country country) {
+		countryDao.addCountry(country);
+		
+	}
+
+	
+
+
+
+
+	
 	
 	
 	

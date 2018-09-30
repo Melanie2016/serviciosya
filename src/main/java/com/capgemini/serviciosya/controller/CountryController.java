@@ -6,10 +6,14 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.capgemini.serviciosya.model.Country;
+import com.capgemini.serviciosya.model.Province;
 import com.capgemini.serviciosya.service.ICountryService;
 
 
@@ -27,22 +31,49 @@ public class CountryController {
 	
 	
 	
-	@RequestMapping(path="/countries")
-	public ModelAndView hola() {
+	@RequestMapping(path="country/name/{name}")
+	public ModelAndView countries(@PathVariable String name) {
 		
+		// pasar a mayuscula los nombres 
 		ModelMap model = new ModelMap();
 		
+//		String names = name.toUpperCase();
 		
-		List<Country> list = countryService.listarPaises();
+		List<Province> list = countryService.consultProvincesByCountryName(name);
 		
-		model.put("lista", list);
+		model.put("provinces", list);		
 		
+		return new ModelAndView ("provincesByCountryName",model);
+	}
+	
+	
+	@RequestMapping(path="/addCountry", method = RequestMethod.GET)
+	public ModelAndView assCountry() {
 		
+		ModelMap model = new ModelMap();
+		Country country = new Country();
+		
+		model.put("countries", country);		
 		
 		return new ModelAndView ("countries",model);
 	}
 	
-	
+	@RequestMapping(path="/addCountry", method = RequestMethod.POST)
+	public ModelAndView registroCiudades(@ModelAttribute ("countries") Country country ) {
+		
+		
+		ModelMap model = new ModelMap();
+		countryService.addCountry(country);
+		
+		List<Country> list = countryService.listCountries();
+		
+		model.put("countries",list);
+		
+		
+		
+		
+		return new ModelAndView ("countryHistory",model);
+	}
 	
 	
 	

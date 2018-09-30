@@ -10,10 +10,10 @@
 	    <meta name="description" content="">
 	    <meta name="author" content="">
 	
-	    <title>REGISTRAR</title>
+	    <title>PAISES</title>
 	
 	    <!-- Bootstrap core CSS -->
-	    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	
 	    <!-- Custom fonts for this template -->
 	    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -22,14 +22,6 @@
 	
 	    <!-- Custom styles for this template -->
 	    <link href="css/landing-page.min.css" rel="stylesheet">
-	   	
-	   	
-	   	<!-- para arreglar  -->
-	   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	   	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-	   	
 	   	
 	</head>
 	<body>
@@ -55,64 +47,48 @@
 		    </ul>
 		  </div>
 		</nav>
+		
+		
+		
 		<div class="container">
 		
+		<br><br>
+		<p class="h4 mb-4">Paises</p>
 		
-			<!-- Default form login -->
-				<form:form action="addCountry"  method="POST" modelAttribute="countries" class="text-center border border-light p-5" >
-				
-				    <p class="h4 mb-4">Nuevo Pa&iacute;s</p>
-				
-				    <!-- Id -->			
-					<form:input path="id" id="id" type="hidden"  class="form-control mb-4" placeholder="" /><br> 
-				    
-				    
-				    <!-- Name -->
-				    <form:input path="name" id="name" type="text" class="form-control mb-4" placeholder="Name" /><br> 
-				    
-				    
-				    
-<!-- 				    <div class="d-flex justify-content-around"> -->
-<!-- 				        <div> -->
-<!-- 				            Remember me -->
-<!-- 				            <div class="custom-control custom-checkbox"> -->
-<!-- 				                <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember"> -->
-<!-- 				                <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label> -->
-<!-- 				            </div> -->
-<!-- 				        </div> -->
-<!-- 				        <div> -->
-<!-- 				            Forgot password -->
-<!-- 				            <a href="">Forgot password?</a> -->
-<!-- 				        </div> -->
-<!-- 				    </div> -->
-				
-				    <!-- Sign in button -->
-				    <button class="btn btn-info btn-block my-4" type="submit">Agregar</button>
-				
-				   
-				
-				    <a type="button" class="light-blue-text mx-2">
-				        <i class="fa fa-facebook"></i>
-				    </a>
-				    <a type="button" class="light-blue-text mx-2">
-				        <i class="fa fa-twitter"></i>
-				    </a>
-				    <a type="button" class="light-blue-text mx-2">
-				        <i class="fa fa-linkedin"></i>
-				    </a>
-				    <a type="button" class="light-blue-text mx-2">
-				        <i class="fa fa-github"></i>
-				    </a>
-				
-				</form:form>
-				
-	
-				
-				
+			
+			<table class="table table-hover" >
+			  <thead style="background-color: #18a2b8; color:white;">
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Id</th>
+			      <th scope="col">Name</th>
+
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <c:forEach items="${countries}" var="countries">
+						
+							<tr>
+
+								<th scope="row"></th>
+									<td>${countries.id}</td>
+ 									<td>${countries.name}</td> 
+								
+
+							</tr> 
+				</c:forEach>
+			    
+			    
+			  </tbody>
+			</table>
 		</div>
+		
+		
+		
+		
+		
 		<!-- Footer -->
 	    <footer class="footer bg-light">
-	    	<br><br><br><br>
 	      <div class="container">
 	        <div class="row">
 	          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
@@ -165,7 +141,7 @@
 		
 				
 				
-			<br><br>	
+				
 	
 	
 	</body>
