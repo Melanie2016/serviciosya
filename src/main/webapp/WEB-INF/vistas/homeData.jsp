@@ -32,7 +32,7 @@
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
         <a class="navbar-brand" href="#">ServiciosYa !</a>
-        <a class="btn btn-primary" href="<c:url value="/homeData"/>">Pasar a SpringData</a>
+        <a class="btn btn-primary" href="<c:url value="/home"/>">Pasar a Hibernate</a>
       </div>
     </nav>
 
@@ -70,7 +70,7 @@
 				alert('Para continuar es necesario que ingrese un país  ¡GRACIAS!');
 		}
 		else{
-				location.href="country/name/"+cod;
+				location.href="countryData/name/"+cod;
 		}
 								
 							

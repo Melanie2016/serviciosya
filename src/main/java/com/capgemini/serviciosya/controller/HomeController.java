@@ -18,4 +18,10 @@ public class HomeController {
 	public ModelAndView irAHome() {
 		return new ModelAndView("home");
 	}
+	
+	
+	@RequestMapping(path = "/homeData", method = RequestMethod.GET)
+	public ModelAndView irAHomeData() {
+		return new ModelAndView("homeData");  // lo cambie a turno probisoriamente
+	}
 }

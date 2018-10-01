@@ -30,8 +30,6 @@ public class CountryController {
 	
 	
 	
-	
-	
 	@RequestMapping(path="country/name/{name}")
 	public ModelAndView provinces(@PathVariable String name) {
 		
@@ -46,6 +44,9 @@ public class CountryController {
 		
 		return new ModelAndView ("provincesByCountryName",model);
 	}
+	
+	
+	
 	
 	
 	@RequestMapping(path="country/province/{idProvince}")
