@@ -1,3 +1,8 @@
+<!--
+   - Name: pom.xml
+   - Description: Maven setup file.
+   - Author: Raul Peña (raul.pena@gmail.com)
+   -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -18,9 +23,9 @@
 
     <developers>
         <developer>
-            <id>melanie.lugones</id>
-            <name>Melanie Lugones</name>
-            <email>mel.lugones@gmail.com</email>
+            <id>raul.g.pena</id>
+            <name>Raul Peña</name>
+            <email>raul.pena@gmail.com</email>
         </developer>
     </developers>
 

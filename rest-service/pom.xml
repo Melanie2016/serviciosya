@@ -1,4 +1,9 @@
- <project xmlns="http://maven.apache.org/POM/4.0.0"
+<!--
+   - Name: pom.xml
+   - Description: Maven setup file.
+   - Author: Raul Peña (raul.pena@gmail.com)
+   -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
@@ -16,17 +21,13 @@
     <packaging>jar</packaging>
     <description>API Rest Servicios Ya.</description>
 
-    
-	<developers>
+    <developers>
         <developer>
-            <id>melanie.lugones</id>
-            <name>Melanie Lugones</name>
-            <email>mel.lugones@gmail.com</email>
+            <id>raul.g.pena</id>
+            <name>Raul Peña</name>
+            <email>raul.pena@gmail.com</email>
         </developer>
     </developers>
-
-
-
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -76,7 +77,7 @@
             <artifactId>hibernate-validator</artifactId>
             <scope>compile</scope>
         </dependency>
-		
+
 
         <!--
            - Others.
@@ -119,9 +120,7 @@
         </dependency>
 
     </dependencies>
-    
-    
-   
+
     <!--
        - Build setup.
        -->
