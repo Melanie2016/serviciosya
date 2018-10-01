@@ -1,0 +1,42 @@
+CREATE TABLE public.city
+(
+    id integer NOT NULL,
+    name character varying(48) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT city_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.city
+    OWNER to postgres;
+
+
+CREATE TABLE public.country
+(
+    id integer NOT NULL,
+    name character varying(48) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT country_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.country
+    OWNER to postgres;
+
+CREATE TABLE public.province
+(
+    pro_id integer NOT NULL,
+    name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT province_pkey PRIMARY KEY (pro_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.province
+    OWNER to postgres;

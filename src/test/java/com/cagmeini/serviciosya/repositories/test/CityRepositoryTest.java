@@ -1,6 +1,7 @@
 package com.cagmeini.serviciosya.repositories.test;
 
 import java.util.Arrays;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -66,7 +67,7 @@ public class CityRepositoryTest {
         ProvinceEntity[] provinces = new ProvinceEntity [] {
 
                 new ProvinceEntity(Integer.valueOf (6),"Buenos Aires", this.repositoryCountry.getOne(1)),
-                new ProvinceEntity(Integer.valueOf (7),"Misiones",this.repositoryCountry.getOne(1)),
+                new ProvinceEntity(Integer.valueOf (7),"Mendoza",this.repositoryCountry.getOne(1)),
                 new ProvinceEntity(Integer.valueOf (8),"Cordoba",this.repositoryCountry.getOne(1)),
         };
         logger.debug (String.format ("Objects provinces created %s", Arrays.toString (countries)));
@@ -87,6 +88,9 @@ public class CityRepositoryTest {
                 new CityEntity (Integer.valueOf (11),this.repositoryProvince.getOne(6),"Moron"),
                 new CityEntity (Integer.valueOf (12),this.repositoryProvince.getOne(6),"Castelar"),
                 new CityEntity (Integer.valueOf (13),this.repositoryProvince.getOne(6),"Ituzaingo"),
+                new CityEntity (Integer.valueOf (14),this.repositoryProvince.getOne(8),"Carlos Paz"),
+                new CityEntity (Integer.valueOf (15),this.repositoryProvince.getOne(8),"La Falda"),
+                new CityEntity (Integer.valueOf (16),this.repositoryProvince.getOne(7),"San Rafael"),
         };
         logger.debug (String.format ("Objects city created %s", Arrays.toString (cityList)));
 
@@ -95,6 +99,22 @@ public class CityRepositoryTest {
         logger.debug (String.format ("City saved %s", Arrays.toString (cityList)));
     }
 
+    
+    @Test
+    public void testFindAll() {
+    	
+    	
+    	List<CityEntity> list = this.repositoryCity.findAll();
+    	
+    	Assert.assertFalse(list.isEmpty());
+    	
+    	for(CityEntity ci :list) {
+        	System.out.println("/////////////////////////////////////////////");
+            System.out.println("Ciudad : " + ci.getName());
+            
+
+        }
+    }
 
     @Test
     public void testFindOneCityByName(){
@@ -104,19 +124,96 @@ public class CityRepositoryTest {
         CityEntity city2 = this.repositoryCity.findOneCityEntityByName("Moron");
 
         Assert.assertEquals(city1.getName(),city2.getName());
-
+        System.out.println("City : "+city1.getName());
     }
 
-//    @Test
-//    public void testfindAllCitiesByProvinceEntities(){
-//
-//    	ProvinceEntity province = this.repositoryProvince.getOne(6);
-//        List<CityEntity> list =  this.repositoryCity.findAllCitiesByProvinceEntities(province.getId());
-//
-//
-//        Assert.assertFalse(list.isEmpty());
-//
-//
-//    }
+    
+    @Test
+    public void testfindAllCitiesByProvinceEntities(){
+
+    	ProvinceEntity p = this.repositoryProvince.getOne(6);
+    	
+    	
+        List<CityEntity> list =  this.repositoryCity.findAllByProvinceOrderByNameDesc(p);
+
+
+        Assert.assertFalse(list.isEmpty());
+        
+       
+//        System.out.println("Provincia de : "+p.getName());
+        
+        for(CityEntity ci :list) {
+        	System.out.println("/////////////////////////////////////////////");
+            System.out.println("Ciudad : " + ci.getName());
+            System.out.println("/////////////////////////////////////////////");
+
+        }
+       
+    }
+    
+    @Test
+    public void testfindAllCitiesByProvinceWithQueryStatia(){
+    	
+    	
+        List<CityEntity> list =  this.repositoryCity.findAllCitiesByProvince(8);
+
+        Assert.assertFalse(list.isEmpty());
+        
+        for(CityEntity ci :list) {
+        	System.out.println("/////////////////////////////////////////////");
+            System.out.println("Ciudad : " + ci.getName());
+            System.out.println("/////////////////////////////////////////////");
+
+        }
+       
+    }
+    
+    
+    @Test
+    public void testfindAllCitiesByProvinceEntitiesWithQuery(){
+    	
+    	
+        List<CityEntity> list =  this.repositoryCity.findAllCitiesByProvinceEntities(6);
+
+        Assert.assertFalse(list.isEmpty());
+        
+        for(CityEntity ci :list) {
+        	System.out.println("/////////////////////////////////////////////");
+            System.out.println("Ciudad : " + ci.getName());
+            System.out.println("/////////////////////////////////////////////");
+
+        }
+       
+    }
+    
+    
+    
+    
+    @Test
+    public void testfindAllCitiesByProvinceName(){
+
+   	
+    	ProvinceEntity p = this.repositoryProvince.findOneByName("Cordoba");
+    	
+        List<CityEntity> list =  this.repositoryCity.findAllByProvinceOrderByNameDesc(p);
+        
+
+        Assert.assertFalse(list.isEmpty());
+        
+       
+//        System.out.println("Provincia de : "+p.getName());
+        
+        for(CityEntity ci :list) {
+        	System.out.println("/////////////////////////////////////////////");
+            System.out.println("Ciudad : " + ci.getName());
+            System.out.println("/////////////////////////////////////////////");
+
+        }
+       
+    }
+    
+    
+    
+    
 
 }

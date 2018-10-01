@@ -91,6 +91,14 @@ public class ProvinceRepositoryTest {
 
         Assert.assertNotNull ("There are provinces...", list);
         Assert.assertFalse ("There are provinces...",list.isEmpty ());
+        
+        
+        for(ProvinceEntity p : list) {
+        	System.out.println("/////////////////////////////////////////////");
+            System.out.println("Provincias por pais: " + p.getName());
+            System.out.println("/////////////////////////////////////////////");
+        }
+        
     }
     
     

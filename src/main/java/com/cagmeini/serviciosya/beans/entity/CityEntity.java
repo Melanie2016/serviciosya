@@ -6,6 +6,14 @@ import javax.validation.constraints.Size;
 
 @Table (name="city")
 @Entity (name="City")
+//@NamedQueries({
+//
+//    @NamedQuery(
+//
+//        name  = "findAllCitiesByProvince",
+//        query = "from City p where p.phone = :phone"
+//      )
+//})
 public class CityEntity { 
 	
 	
@@ -101,4 +109,13 @@ public class CityEntity {
         
         return true;
 	}
+
+	
+	
+	
+	
+	
+	
+	
+	
 }

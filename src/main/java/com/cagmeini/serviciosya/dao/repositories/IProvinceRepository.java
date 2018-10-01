@@ -15,4 +15,6 @@ public interface IProvinceRepository extends JpaRepository<ProvinceEntity, Integ
 	
     List<ProvinceEntity> findAllByCountryOrderByNameDesc (CountryEntity country);
 
+	ProvinceEntity findOneByName(String name);
+
 }
