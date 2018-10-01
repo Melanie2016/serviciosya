@@ -21,13 +21,6 @@ public interface ICityRepository extends JpaRepository<CityEntity, Integer> {
 	
 	
 	
-//	@NamedQuery(
-//			  name = "User.findByGroupId",
-//			  query =
-//			    "SELECT u FROM UserGroup ug " +
-//			    "INNER JOIN ug.user u WHERE ug.group_id = :groupId ORDER BY u.lastname"
-//			)
-	
 
    CityEntity findOneCityEntityByName(String name);
 
@@ -41,5 +34,5 @@ public interface ICityRepository extends JpaRepository<CityEntity, Integer> {
    List<CityEntity> findAllByProvinceOrderByNameDesc(ProvinceEntity province);
    
    
-   
+
 }

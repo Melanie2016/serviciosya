@@ -1,0 +1,244 @@
+---------------------------------------------------country------------------------------
+
+CREATE TABLE public.country
+(
+    cou_id integer NOT NULL,
+    cou_code character varying(10) COLLATE pg_catalog."default" NOT NULL,
+    cou_name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT country_pkey PRIMARY KEY (cou_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.country
+    OWNER to postgres;
+
+
+-------------------------------------------------province-------------------------------
+CREATE TABLE public.province
+(
+    pro_id integer NOT NULL,
+    pro_name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    cou_id integer NOT NULL,
+    CONSTRAINT province_pkey PRIMARY KEY (pro_id),
+    CONSTRAINT fkhbf1iw8ebkxs4a0c4pnci981k FOREIGN KEY (cou_id)
+        REFERENCES public.country (cou_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.province
+    OWNER to postgres;
+
+
+-----------------------------------------------country--------------------------------
+CREATE TABLE public.country
+(
+    cou_id integer NOT NULL,
+    cou_code character varying(10) COLLATE pg_catalog."default" NOT NULL,
+    cou_name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT country_pkey PRIMARY KEY (cou_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.country
+    OWNER to postgres;
+
+-------------------------------------------------consummer--------------------------
+
+CREATE TABLE public.consumer
+(
+    consumer_id integer NOT NULL,
+    address character varying(128) COLLATE pg_catalog."default" NOT NULL,
+    dni integer NOT NULL,
+    email character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    lastname character varying(48) COLLATE pg_catalog."default" NOT NULL,
+    name character varying(48) COLLATE pg_catalog."default" NOT NULL,
+    phone character varying(48) COLLATE pg_catalog."default" NOT NULL,
+    city_id integer,
+    CONSTRAINT consumer_pkey PRIMARY KEY (consumer_id),
+    CONSTRAINT uk_5smnb1n8p1g0c50lptj4dceox UNIQUE (phone)
+,
+    CONSTRAINT uk_adl08ilt4vgk91v0pv48of2fu UNIQUE (email)
+,
+    CONSTRAINT uk_nmovlt2yvwkgegxa7wb5olc8s UNIQUE (dni)
+,
+    CONSTRAINT fkllv7fia947y5racd4lkcfh82u FOREIGN KEY (city_id)
+        REFERENCES public.city (cit_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.consumer
+    OWNER to postgres;
+
+
+------------------------------------------------------------provider-------------
+
+CREATE TABLE public.provider
+(
+    provider_id integer NOT NULL,
+    address character varying(128) COLLATE pg_catalog."default" NOT NULL,
+    dni integer NOT NULL,
+    email character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    lastname character varying(48) COLLATE pg_catalog."default" NOT NULL,
+    name character varying(48) COLLATE pg_catalog."default" NOT NULL,
+    phone character varying(48) COLLATE pg_catalog."default" NOT NULL,
+    status integer,
+    city_id integer,
+    CONSTRAINT provider_pkey PRIMARY KEY (provider_id),
+    CONSTRAINT uk_7pvp08p4hu0e5k4452khlhv78 UNIQUE (email)
+,
+    CONSTRAINT uk_eheh6my8au57ut5vis7l9llqi UNIQUE (dni)
+,
+    CONSTRAINT uk_mbl0lsm2a6sto614udtc4fnsn UNIQUE (phone)
+,
+    CONSTRAINT fkrlh8uhcluf8si4vfbgdw3w6p1 FOREIGN KEY (city_id)
+        REFERENCES public.city (cit_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT provider_status_check CHECK (status <= 2 AND status >= 0)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.provider
+    OWNER to postgres;
+
+
+
+
+-----------------------------------------------------------------------service------------
+
+
+CREATE TABLE public.service
+(
+    id integer NOT NULL,
+    date bytea,
+    "time" bytea,
+    consumer_id integer NOT NULL,
+    CONSTRAINT service_pkey PRIMARY KEY (id),
+    CONSTRAINT fkmkwbik0aeasdsyg88812v8ao0 FOREIGN KEY (consumer_id)
+        REFERENCES public.consumer (consumer_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.service
+    OWNER to postgres;
+------------------------------------------------------------occupation---------
+
+CREATE TABLE public.occupation
+(
+    occupation_id integer NOT NULL DEFAULT nextval('occupation_occupation_id_seq'::regclass),
+    description character varying(48) COLLATE pg_catalog."default" NOT NULL,
+    name character varying(48) COLLATE pg_catalog."default" NOT NULL,
+    parent integer,
+    CONSTRAINT occupation_pkey PRIMARY KEY (occupation_id),
+    CONSTRAINT fkavvfn2j18y3dop6n1lnpgk5e9 FOREIGN KEY (parent)
+        REFERENCES public.occupation (occupation_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.occupation
+    OWNER to postgres;
+
+
+
+
+
+
+--------------------------------------------------------------------availability.-----------------
+
+
+CREATE TABLE public.availability
+(
+    availability_id integer NOT NULL,
+    day_of_attention character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    end_time bytea NOT NULL,
+    start_time bytea NOT NULL,
+    CONSTRAINT availability_pkey PRIMARY KEY (availability_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.availability
+    OWNER to postgres;
+
+
+
+-------------------------------------------------- occu_avai----------------------
+
+CREATE TABLE public.occupation_x_availability
+(
+    availability_id integer NOT NULL,
+    occupation_id integer NOT NULL,
+    CONSTRAINT occupation_x_availability_pkey PRIMARY KEY (availability_id, occupation_id),
+    CONSTRAINT fkja8bs99a2vbhnh7b8b2mpmiwl FOREIGN KEY (occupation_id)
+        REFERENCES public.occupation (occupation_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT fklhe45l9npu5li9s8p5rdoydm5 FOREIGN KEY (availability_id)
+        REFERENCES public.availability (availability_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.occupation_x_availability
+    OWNER to postgres;
+
+
+----------------------------------------------- provider_availa---------------------
+
+
+CREATE TABLE public.provider_x_availability
+(
+    availability_id integer NOT NULL,
+    provider_id integer NOT NULL,
+    CONSTRAINT provider_x_availability_pkey PRIMARY KEY (availability_id, provider_id),
+    CONSTRAINT fk896gpqdbu3ol75yybabtqqtag FOREIGN KEY (availability_id)
+        REFERENCES public.availability (availability_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT fkm4grh176eallahqelcow0ehlo FOREIGN KEY (provider_id)
+        REFERENCES public.provider (provider_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.provider_x_availability
+    OWNER to postgres;

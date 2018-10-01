@@ -8,4 +8,9 @@ import com.cagmeini.serviciosya.beans.entity.CountryEntity;
 
 @Repository
 public interface ICountryRepository extends JpaRepository<CountryEntity, Integer> {
+
+	CountryEntity findOneByCode(String code);
+	
+	
+	
 }

@@ -16,7 +16,7 @@ import org.junit.runners.MethodSorters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
+import com.cagmeini.serviciosya.beans.entity.CityEntity;
 import com.cagmeini.serviciosya.beans.entity.CountryEntity;
 import com.cagmeini.serviciosya.beans.entity.ProvinceEntity;
 import com.cagmeini.serviciosya.dao.repositories.ICountryRepository;
@@ -64,10 +64,10 @@ public class ProvinceRepositoryTest {
         logger.info ("Creating provinces...");
         ProvinceEntity[] provinces = new ProvinceEntity [] {
 
-                new ProvinceEntity (Integer.valueOf (1), "Buenos Aires", countries[0]),
-                new ProvinceEntity (Integer.valueOf (2), "Cordoba", countries[0]),
-                new ProvinceEntity (Integer.valueOf (3), "Caracas", countries[1]),
-                new ProvinceEntity (Integer.valueOf (4), "Miranda", countries[0])
+                new ProvinceEntity (Integer.valueOf (3), "Buenos Aires", countries[0]),
+                new ProvinceEntity (Integer.valueOf (4), "Cordoba", countries[0]),
+                new ProvinceEntity (Integer.valueOf (5), "Caracas", countries[1]),
+                new ProvinceEntity (Integer.valueOf (6), "Miranda", countries[1])
         };
         logger.debug (String.format ("Objects province created %s", Arrays.toString (countries)));
 
@@ -77,7 +77,25 @@ public class ProvinceRepositoryTest {
     }
 
     
-    
+    @Test
+    public void testGetAll() {
+
+        logger.info ("Getting provinces...");
+
+
+        List<ProvinceEntity> list = this.repositoryProvince.findAll();
+
+        Assert.assertNotNull ("There are provinces...", list);
+        Assert.assertFalse ("There are provinces...",list.isEmpty ());
+        
+        
+        for(ProvinceEntity p : list) {
+        	System.out.println("/////////////////////////////////////////////");
+            System.out.println("Provincias : " + p.getName());
+            System.out.println("/////////////////////////////////////////////");
+        }
+        
+    }
     
     @Test
     public void testGetAllByCountry () {
@@ -101,5 +119,25 @@ public class ProvinceRepositoryTest {
         
     }
     
+    
+    @Test
+    public void testGetAllByCountryCode() {
+
+        
+        CountryEntity c = this.repositoryCountry.findOneByCode("ve");
+        List<ProvinceEntity> list =  this.repositoryProvince.findAllByCountryOrderByNameDesc(c);
+
+
+        Assert.assertNotNull ("There are provinces...", list);
+        Assert.assertFalse ("There are provinces...",list.isEmpty ());
+        
+        
+        for(ProvinceEntity p : list) {
+        	System.out.println("/////////////////////////////////////////////");
+            System.out.println("Provincias por pais: " + p.getName());
+            System.out.println("/////////////////////////////////////////////");
+        }
+        
+    }
     
 }
