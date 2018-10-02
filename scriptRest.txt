@@ -1,0 +1,60 @@
+
+
+---------------------------------------------------country------------------------------
+
+CREATE TABLE public.country
+(
+    cou_id integer NOT NULL,
+    cou_code character varying(10) COLLATE pg_catalog."default" NOT NULL,
+    cou_name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT country_pkey PRIMARY KEY (cou_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.country
+    OWNER to postgres;
+
+
+-------------------------------------------------province-------------------------------
+CREATE TABLE public.province
+(
+    pro_id integer NOT NULL,
+    pro_name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    cou_id integer NOT NULL,
+    CONSTRAINT province_pkey PRIMARY KEY (pro_id),
+    CONSTRAINT fkhbf1iw8ebkxs4a0c4pnci981k FOREIGN KEY (cou_id)
+        REFERENCES public.country (cou_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.province
+    OWNER to postgres;
+
+
+-----------------------------------------------city--------------------------------
+CREATE TABLE public.city
+(
+    cit_id integer NOT NULL,
+    name character varying(48) COLLATE pg_catalog."default" NOT NULL,
+    pro_id integer NOT NULL,
+    CONSTRAINT city_pkey PRIMARY KEY (cit_id),
+    CONSTRAINT pro_id FOREIGN KEY (pro_id)
+        REFERENCES public.province (pro_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.city
+    OWNER to postgres;

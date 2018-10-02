@@ -10,20 +10,20 @@ import javax.persistence.*;
 public class CityEntity {
 
 
-    // Map the fields (Database tables ) and properties (Java classes)
+
     @Id
     @GeneratedValue (strategy=GenerationType.IDENTITY)
-    @Column (name = "id", nullable = false, insertable = false, updatable = false)
+    @Column (name = "cit_id", nullable = false, insertable = false, updatable = false)
     private int id;
 
     @Column (name = "name", length = 48, nullable = false)
     private String name;
 
-    /*
+
     @ManyToOne
-    @JoinColumn (name="province_id")
+    @JoinColumn (name="pro_id")
     private ProvinceEntity province;
-    */
+
 
     public CityEntity() {
 
@@ -59,6 +59,15 @@ public class CityEntity {
 
         this.name = name;
     }
+
+    public ProvinceEntity getProvince() {
+        return province;
+    }
+
+    public void setProvince(ProvinceEntity province) {
+        this.province = province;
+    }
+
 
 
 

@@ -1,0 +1,31 @@
+INSERT INTO country
+VALUES 	(1	,'Argentina'	),
+		(2	,'Brasil'		),
+		(3	,'Venezuela'	);
+		
+--delete from country where cou_id > 0;
+
+
+
+INSERT INTO province
+VALUES	(1	,'Buenos Aires'	,1	),
+		(2	,'Cordoba'		,1	),
+		(3	,'Sao Paulo'	,2	),
+		(4	,'Aragua'		,3	),
+		(5	,'Carabobo'		,3	);
+
+-- delete from province where pro_id > 0;		
+
+
+
+INSERT INTO city
+VALUES	(1	,'San Pedro'	,1	),
+		(2	,'La Plata'		,1	),
+		(3	,'La Falda'		,2	),
+		(4	,'Carlos Paz'	,2	),
+		(5	,'Santos'		,3	),
+		(6	,'Santo André'	,3	),
+		(7	,'Maracay'		,4	),
+		(8	,'Cagua'		,4	),
+		(9	,'Valencia'		,5	),
+		(10	,'San Diego'	,5	);

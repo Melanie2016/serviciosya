@@ -12,10 +12,10 @@ import java.util.Set;
 public class CountryEntity {
 
 
-    // Map the fields (Database tables ) and properties (Java classes)
+
     @Id
     @GeneratedValue (strategy=GenerationType.IDENTITY)
-    @Column (name = "id", nullable = false, insertable = false, updatable = false)
+    @Column (name = "cou_id", nullable = false, insertable = false, updatable = false)
     private int id;
 
     @Column (name = "name", length = 48, nullable = false)
